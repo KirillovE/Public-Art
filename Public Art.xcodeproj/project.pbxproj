@@ -13,6 +13,7 @@
 		3E6511362161235D00B8EE8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6511342161235D00B8EE8F /* LaunchScreen.storyboard */; };
 		3E6511392161235D00B8EE8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6511382161235D00B8EE8F /* main.m */; };
 		3E65114121614B5B00B8EE8F /* Artwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65114021614B5B00B8EE8F /* Artwork.m */; };
+		3E65114421614F9300B8EE8F /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65114321614F9300B8EE8F /* APIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		3E6511382161235D00B8EE8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E65113F21614B5B00B8EE8F /* Artwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Artwork.h; sourceTree = "<group>"; };
 		3E65114021614B5B00B8EE8F /* Artwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Artwork.m; sourceTree = "<group>"; };
+		3E65114221614F9300B8EE8F /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		3E65114321614F9300B8EE8F /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 				3E65112D2161235B00B8EE8F /* MapViewController.m */,
 				3E65113F21614B5B00B8EE8F /* Artwork.h */,
 				3E65114021614B5B00B8EE8F /* Artwork.m */,
+				3E65114221614F9300B8EE8F /* APIManager.h */,
+				3E65114321614F9300B8EE8F /* APIManager.m */,
 				3E6511322161235D00B8EE8F /* Assets.xcassets */,
 				3E6511342161235D00B8EE8F /* LaunchScreen.storyboard */,
 				3E6511372161235D00B8EE8F /* Info.plist */,
@@ -146,6 +151,7 @@
 				3E6511392161235D00B8EE8F /* main.m in Sources */,
 				3E65114121614B5B00B8EE8F /* Artwork.m in Sources */,
 				3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */,
+				3E65114421614F9300B8EE8F /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

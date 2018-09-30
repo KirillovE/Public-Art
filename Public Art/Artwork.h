@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
+
 @end
 
 NS_ASSUME_NONNULL_END
