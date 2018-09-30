@@ -1,18 +1,18 @@
 //
-//  ViewController.m
+//  MapViewController.m
 //  Public Art
 //
 //  Created by Евгений Кириллов on 30/09/2018.
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MapViewController.h"
 
-@interface ViewController ()
+@interface MapViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

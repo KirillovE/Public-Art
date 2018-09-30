@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MapViewController.h
 //  Public Art
 //
 //  Created by Евгений Кириллов on 30/09/2018.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MapViewController : UIViewController
 
 
 @end
