@@ -17,14 +17,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    MapViewController *mapVC = [MapViewController new];
-    mapVC.view.backgroundColor = UIColor.blueColor;
-    
-    UINavigationController *navController = [[UINavigationController alloc]
-                                             initWithRootViewController:mapVC];
-    
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    self.window.rootViewController = navController;
+    self.window.rootViewController = [MapViewController new];
     [self.window makeKeyAndVisible];
     
     return YES;
