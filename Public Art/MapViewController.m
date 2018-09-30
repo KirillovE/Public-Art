@@ -10,6 +10,7 @@
 
 @interface MapViewController ()
 
+@property (strong, nonatomic) MKMapView *mapView;
 @property (strong, nonatomic) NSArray<Artwork *> *artArray;
 
 @end
@@ -27,16 +28,33 @@
                                  0,
                                  UIScreen.mainScreen.bounds.size.width,
                                  UIScreen.mainScreen.bounds.size.height);
-    MKMapView *mapView = [[MKMapView alloc] initWithFrame:mapFrame];
-    [self.view addSubview:mapView];
+    self.mapView = [[MKMapView alloc] initWithFrame:mapFrame];
+    self.mapView.delegate = self;
+    [self.view addSubview:self.mapView];
 }
 
 - (void)getArtworks {
     APIManager *apiManager = [APIManager new];
     [apiManager getArtworksWithCompletion:^(NSArray<Artwork *> * _Nonnull artArray) {
         self.artArray = artArray;
-        NSLog(@"");
+        [self showAnnotationsOnMap];
     }];
+}
+
+#pragma mark - используем методы делегата
+
+- (void)showAnnotationsOnMap {
+    NSMutableArray<MKPointAnnotation *> *annotations = [NSMutableArray array];
+    for (Artwork *artwork in self.artArray) {
+        MKPointAnnotation *annotation = [MKPointAnnotation new];
+        annotation.title = artwork.title;
+        annotation.subtitle = artwork.discipline;
+        annotation.coordinate = CLLocationCoordinate2DMake(artwork.latitude.doubleValue, artwork.longitude.doubleValue);
+        
+        [annotations addObject:annotation];
+    }
+    
+    [self.mapView addAnnotations:annotations];
 }
 
 @end

@@ -11,7 +11,7 @@
 #import "Artwork.h"
 #import "APIManager.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController <MKMapViewDelegate>
 
 
 @end
