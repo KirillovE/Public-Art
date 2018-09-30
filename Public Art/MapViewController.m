@@ -10,13 +10,19 @@
 
 @interface MapViewController ()
 
+@property (strong, nonatomic) NSArray<Artwork *> *artArray;
+
 @end
 
 @implementation MapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setMapView];
+    [self getArtworks];
+}
+
+- (void)setMapView {
     CGRect mapFrame = CGRectMake(0,
                                  0,
                                  UIScreen.mainScreen.bounds.size.width,
@@ -25,5 +31,12 @@
     [self.view addSubview:mapView];
 }
 
+- (void)getArtworks {
+    APIManager *apiManager = [APIManager new];
+    [apiManager getArtworksWithCompletion:^(NSArray<Artwork *> * _Nonnull artArray) {
+        self.artArray = artArray;
+        NSLog(@"");
+    }];
+}
 
 @end

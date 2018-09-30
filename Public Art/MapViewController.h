@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Artwork.h"
+#import "APIManager.h"
 
 @interface MapViewController : UIViewController
 
