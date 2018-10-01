@@ -15,10 +15,6 @@
     
     self.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     self.canShowCallout = YES;
-    
-    UILabel *customSubtitle = [UILabel new];
-    customSubtitle.text = self.artwork.discipline;
-    self.detailCalloutAccessoryView = customSubtitle;
 }
 
 @end

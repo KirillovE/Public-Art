@@ -22,7 +22,6 @@
 
 - (NSString *)subtitle {
     return self.artwork.discipline;
-    // почему-то не выводится на экран эта строка
 }
 
 - (instancetype)initWithArtwork:(Artwork *)artwork {
