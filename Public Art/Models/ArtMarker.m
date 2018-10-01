@@ -12,12 +12,17 @@
 
 @synthesize coordinate;
 
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
+    coordinate = newCoordinate;
+}
+
 - (NSString *)title {
     return self.artwork.title;
 }
 
 - (NSString *)subtitle {
     return self.artwork.discipline;
+    // почему-то не выводится на экран эта строка
 }
 
 - (instancetype)initWithArtwork:(Artwork *)artwork {
@@ -28,10 +33,6 @@
     }
     
     return self;
-}
-
-- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
-    coordinate = newCoordinate;
 }
 
 @end

@@ -22,6 +22,7 @@
     self.view.backgroundColor = UIColor.whiteColor;
     [self addArtTitleLabel];
     [self addDismissButton];
+    [self addArtDescriptionLabel];
 }
 
 #pragma mark - добавление графических элементов
@@ -47,13 +48,20 @@
     [self.view addSubview:self.artTitle];
 }
 
+- (void)addArtCredits {
+    NSString *discipline;
+    NSString *creator;
+    NSNumber *date;
+    NSString *location;
+}
+
 - (void)addArtDescriptionLabel {
     if ([self.artwork.description isEqual:[NSNull null]]) {
         return;
     }
     
     self.artDescription = [[UILabel alloc] initWithFrame:CGRectZero];
-    self.artDescription.text = self.artwork.title;
+    self.artDescription.text = self.artwork.artDescription;
     self.artDescription.numberOfLines = 0;
     self.artDescription.font = [UIFont systemFontOfSize:17 weight:UIFontWeightRegular];
     CGSize labelSize = [self getLabelSizeForText:self.artTitle.text

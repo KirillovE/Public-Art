@@ -71,12 +71,21 @@
 		3E6511282161235B00B8EE8F /* Public Art */ = {
 			isa = PBXGroup;
 			children = (
+				3E6511512162451F00B8EE8F /* View Controllers */,
+				3E6511502162451300B8EE8F /* Models */,
+				3E6511322161235D00B8EE8F /* Assets.xcassets */,
+				3E6511342161235D00B8EE8F /* LaunchScreen.storyboard */,
+				3E6511372161235D00B8EE8F /* Info.plist */,
+				3E6511382161235D00B8EE8F /* main.m */,
+			);
+			path = "Public Art";
+			sourceTree = "<group>";
+		};
+		3E6511502162451300B8EE8F /* Models */ = {
+			isa = PBXGroup;
+			children = (
 				3E6511292161235B00B8EE8F /* AppDelegate.h */,
 				3E65112A2161235B00B8EE8F /* AppDelegate.m */,
-				3E65112C2161235B00B8EE8F /* MapViewController.h */,
-				3E65112D2161235B00B8EE8F /* MapViewController.m */,
-				3E651145216212DE00B8EE8F /* DetailsViewController.h */,
-				3E651146216212DE00B8EE8F /* DetailsViewController.m */,
 				3E65113F21614B5B00B8EE8F /* Artwork.h */,
 				3E65114021614B5B00B8EE8F /* Artwork.m */,
 				3E65114221614F9300B8EE8F /* APIManager.h */,
@@ -85,12 +94,19 @@
 				3E65114C2162354D00B8EE8F /* ArtMarker.m */,
 				3E6511482162310A00B8EE8F /* ArtAnnotation.h */,
 				3E6511492162310A00B8EE8F /* ArtAnnotation.m */,
-				3E6511322161235D00B8EE8F /* Assets.xcassets */,
-				3E6511342161235D00B8EE8F /* LaunchScreen.storyboard */,
-				3E6511372161235D00B8EE8F /* Info.plist */,
-				3E6511382161235D00B8EE8F /* main.m */,
 			);
-			path = "Public Art";
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E6511512162451F00B8EE8F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E65112C2161235B00B8EE8F /* MapViewController.h */,
+				3E65112D2161235B00B8EE8F /* MapViewController.m */,
+				3E651145216212DE00B8EE8F /* DetailsViewController.h */,
+				3E651146216212DE00B8EE8F /* DetailsViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

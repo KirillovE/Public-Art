@@ -67,7 +67,8 @@ calloutAccessoryControlTapped:(UIControl *)control {
     NSLog(@"Из массива аннотаций: %@", mapView.annotations[4].title);
     // индексы не совпадают
     
-    detailsVC.artwork = view.annotation;
+    ArtAnnotation *myAnnotation = (ArtAnnotation *)view.annotation;
+    detailsVC.artwork = myAnnotation.artwork;
     
     [self presentViewController:detailsVC animated:YES completion:nil];
 }
