@@ -10,9 +10,10 @@
 
 @interface DetailsViewController ()
 
+@property (strong, nonatomic) UIButton *dismissButton;
 @property (strong, nonatomic) UILabel *artTitle;
-@property (strong, nonatomic) UILabel *artDescription;
 @property (strong, nonatomic) UILabel *artCredits;
+@property (strong, nonatomic) UITextView *artDescription;
 @property (strong, nonatomic) NSString *discipline;
 @property (strong, nonatomic) NSString *creator;
 @property (strong, nonatomic) NSString *date;
@@ -25,13 +26,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-    [self addArtTitleLabel];
     [self addDismissButton];
+    [self addArtTitleLabel];
     [self addArtCreditsLabel];
-    [self addArtDescriptionLabel];
+    [self addArtDescriptionView];
 }
 
 #pragma mark - добавление графических элементов
+
+- (void)addDismissButton {
+    self.dismissButton = [UIButton new];
+    [self.dismissButton setTitle:@"V" forState:UIControlStateNormal];
+    self.dismissButton.frame = CGRectMake(CGRectGetMaxX(self.view.bounds) - 60,
+                                          CGRectGetMaxY(self.view.bounds) - 60,
+                                          50,
+                                          50);
+    self.dismissButton.backgroundColor = UIColor.redColor;
+    self.dismissButton.layer.cornerRadius = 25;
+    [self.dismissButton addTarget:self
+                           action:@selector(dismissVC)
+                 forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.dismissButton];
+}
 
 - (void)addArtTitleLabel {
     if ([self.artwork.title isEqual:[NSNull null]]) {
@@ -81,40 +97,22 @@
     [self.view addSubview:self.artCredits];
 }
 
-- (void)addArtDescriptionLabel {
+- (void)addArtDescriptionView {
     if (!self.artwork.description) {
         return;
     }
     
-    self.artDescription = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.artDescription = [UITextView new];
     self.artDescription.text = self.artwork.artDescription;
-    self.artDescription.numberOfLines = 0;
-    self.artDescription.font = [UIFont systemFontOfSize:17 weight:UIFontWeightLight];
-    CGSize labelSize = [self getLabelSizeForText:self.artTitle.text
-                                        withFont:self.artTitle.font];
-    CGRect labelFrame = CGRectMake(18,
-                                   CGRectGetMaxY(self.artCredits.frame) + 10,
-                                   labelSize.width,
-                                   labelSize.height);
-    self.artDescription.frame = labelFrame;
-    self.artDescription.textColor = UIColor.blackColor;
+    CGFloat textViewHeight = self.dismissButton.frame.origin.y - CGRectGetMaxY(self.artCredits.frame) - 20;
+    CGRect textViewRect = CGRectMake(18,
+                                     CGRectGetMaxY(self.artCredits.frame) + 10,
+                                     self.view.bounds.size.width - 36,
+                                     textViewHeight);
+    self.artDescription.frame = textViewRect;
+    self.artDescription.font = [UIFont systemFontOfSize:17 weight:UIFontWeightThin];
     
     [self.view addSubview:self.artDescription];
-}
-
-- (void)addDismissButton {
-    UIButton *dismissButton = [UIButton new];
-    [dismissButton setTitle:@"V" forState:UIControlStateNormal];
-    dismissButton.frame = CGRectMake(CGRectGetMaxX(self.view.bounds) - 60,
-                                     CGRectGetMaxY(self.view.bounds) - 60,
-                                     50,
-                                     50);
-    dismissButton.backgroundColor = UIColor.redColor;
-    dismissButton.layer.cornerRadius = 25;
-    [dismissButton addTarget:self
-                      action:@selector(dismissVC)
-            forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:dismissButton];
 }
 
 #pragma mark - вспомогательное
