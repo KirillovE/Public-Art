@@ -77,7 +77,10 @@
 calloutAccessoryControlTapped:(UIControl *)control {
     
     DetailsViewController *detailsVC = [DetailsViewController new];
+    
+    // надо как-то передать объект Artwork
     detailsVC.artwork = view.annotation;
+    
     [self presentViewController:detailsVC animated:YES completion:nil];
 }
 

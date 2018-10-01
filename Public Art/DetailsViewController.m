@@ -11,6 +11,7 @@
 @interface DetailsViewController ()
 
 @property (strong, nonatomic) UILabel *artTitle;
+@property (strong, nonatomic) UILabel *artDescription;
 
 @end
 
@@ -22,6 +23,8 @@
     [self addArtTitleLabel];
     [self addDismissButton];
 }
+
+#pragma mark - добавление графических элементов
 
 - (void)addArtTitleLabel {
     if ([self.artwork.title isEqual:[NSNull null]]) {
@@ -44,12 +47,36 @@
     [self.view addSubview:self.artTitle];
 }
 
+- (void)addArtDescriptionLabel {
+    if ([self.artwork.description isEqual:[NSNull null]]) {
+        return;
+    }
+    
+    self.artDescription = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.artDescription.text = self.artwork.title;
+    self.artDescription.numberOfLines = 0;
+    self.artDescription.font = [UIFont systemFontOfSize:17 weight:UIFontWeightRegular];
+    CGSize labelSize = [self getLabelSizeForText:self.artTitle.text
+                                        withFont:self.artTitle.font];
+    CGRect labelFrame = CGRectMake(18,
+                                   CGRectGetMaxY(self.artTitle.frame) + 10,
+                                   labelSize.width,
+                                   labelSize.height);
+    self.artDescription.frame = labelFrame;
+    self.artDescription.textColor = UIColor.blackColor;
+    
+    [self.view addSubview:self.artDescription];
+}
+
 - (void)addDismissButton {
     UIButton *dismissButton = [UIButton new];
-    [dismissButton setTitle:@"<" forState:UIControlStateNormal];
-    dismissButton.frame = CGRectMake(0, 0, 100, 100);
-    dismissButton.center = self.view.center;
-    dismissButton.backgroundColor = UIColor.cyanColor;
+    [dismissButton setTitle:@"V" forState:UIControlStateNormal];
+    dismissButton.frame = CGRectMake(CGRectGetMaxX(self.view.bounds) - 60,
+                                     CGRectGetMaxY(self.view.bounds) - 60,
+                                     50,
+                                     50);
+    dismissButton.backgroundColor = UIColor.redColor;
+    dismissButton.layer.cornerRadius = 25;
     [dismissButton addTarget:self
                       action:@selector(dismissVC)
             forControlEvents:UIControlEventTouchUpInside];
@@ -59,6 +86,8 @@
 - (void)dismissVC {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - вспомогательное
 
 - (CGSize)getLabelSizeForText:(NSString *)text
                      withFont:(UIFont *)font {
