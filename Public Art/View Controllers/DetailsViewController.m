@@ -59,7 +59,7 @@
     self.artTitle.text = self.artwork.title;
     self.artTitle.numberOfLines = 0;
     
-    self.artTitle.font = [UIFont systemFontOfSize:20 weight:UIFontWeightSemibold];
+    self.artTitle.font = [UIFont systemFontOfSize:25 weight:UIFontWeightBlack];
     self.artTitle.textColor = UIColor.blackColor;
     
     CGSize labelSize = [self getLabelSizeForText:self.artTitle.text
@@ -80,7 +80,7 @@
     [self setLocation];
     
     self.artCredits = [UILabel new];
-    self.artCredits.text = [NSString stringWithFormat:@"%@ by %@, %@ \nat %@",
+    self.artCredits.text = [NSString stringWithFormat:@"%@ by %@, %@ year \nAt %@",
                             self.discipline,
                             self.creator,
                             self.date,
