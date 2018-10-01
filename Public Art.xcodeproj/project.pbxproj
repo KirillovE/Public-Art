@@ -15,6 +15,8 @@
 		3E65114121614B5B00B8EE8F /* Artwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65114021614B5B00B8EE8F /* Artwork.m */; };
 		3E65114421614F9300B8EE8F /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65114321614F9300B8EE8F /* APIManager.m */; };
 		3E651147216212DE00B8EE8F /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E651146216212DE00B8EE8F /* DetailsViewController.m */; };
+		3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6511492162310A00B8EE8F /* ArtAnnotation.m */; };
+		3E65114D2162354D00B8EE8F /* ArtMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65114C2162354D00B8EE8F /* ArtMarker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		3E65114321614F9300B8EE8F /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		3E651145216212DE00B8EE8F /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		3E651146216212DE00B8EE8F /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		3E6511482162310A00B8EE8F /* ArtAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtAnnotation.h; sourceTree = "<group>"; };
+		3E6511492162310A00B8EE8F /* ArtAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtAnnotation.m; sourceTree = "<group>"; };
+		3E65114B2162354D00B8EE8F /* ArtMarker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtMarker.h; sourceTree = "<group>"; };
+		3E65114C2162354D00B8EE8F /* ArtMarker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtMarker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,10 @@
 				3E65114021614B5B00B8EE8F /* Artwork.m */,
 				3E65114221614F9300B8EE8F /* APIManager.h */,
 				3E65114321614F9300B8EE8F /* APIManager.m */,
+				3E65114B2162354D00B8EE8F /* ArtMarker.h */,
+				3E65114C2162354D00B8EE8F /* ArtMarker.m */,
+				3E6511482162310A00B8EE8F /* ArtAnnotation.h */,
+				3E6511492162310A00B8EE8F /* ArtAnnotation.m */,
 				3E6511322161235D00B8EE8F /* Assets.xcassets */,
 				3E6511342161235D00B8EE8F /* LaunchScreen.storyboard */,
 				3E6511372161235D00B8EE8F /* Info.plist */,
@@ -158,6 +168,8 @@
 				3E651147216212DE00B8EE8F /* DetailsViewController.m in Sources */,
 				3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */,
 				3E65114421614F9300B8EE8F /* APIManager.m in Sources */,
+				3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */,
+				3E65114D2162354D00B8EE8F /* ArtMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

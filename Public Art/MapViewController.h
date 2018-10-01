@@ -11,6 +11,8 @@
 #import "Artwork.h"
 #import "APIManager.h"
 #import "DetailsViewController.h"
+#import "ArtAnnotation.h"
+#import "ArtMarker.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 

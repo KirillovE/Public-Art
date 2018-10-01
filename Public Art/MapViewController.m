@@ -30,6 +30,9 @@
                                  UIScreen.mainScreen.bounds.size.height);
     self.mapView = [[MKMapView alloc] initWithFrame:mapFrame];
     self.mapView.delegate = self;
+    
+    [self.mapView registerClass:[ArtAnnotation class] forAnnotationViewWithReuseIdentifier:MKMapViewDefaultAnnotationViewReuseIdentifier];
+    
     [self.view addSubview:self.mapView];
 }
 
@@ -44,32 +47,13 @@
 #pragma mark - используем методы делегата
 
 - (void)showAnnotationsOnMap {
-    NSMutableArray<MKPointAnnotation *> *annotations = [NSMutableArray array];
+    NSMutableArray<ArtMarker *> *annotations = [NSMutableArray array];
     for (Artwork *artwork in self.artArray) {
-        MKPointAnnotation *annotation = [MKPointAnnotation new];
-        annotation.title = artwork.title;
-        annotation.subtitle = artwork.discipline;
-        annotation.coordinate = CLLocationCoordinate2DMake(artwork.latitude.doubleValue, artwork.longitude.doubleValue);
-        
+        ArtMarker *annotation = [[ArtMarker alloc] initWithArtwork:artwork];
         [annotations addObject:annotation];
     }
     
     [self.mapView addAnnotations:annotations];
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    NSString *identifier = @"ID";
-    MKMarkerAnnotationView *annotationView = (MKMarkerAnnotationView *)[mapView                                                                        dequeueReusableAnnotationViewWithIdentifier:identifier];
-    
-    if (!annotationView) {
-        annotationView = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation
-                                                            reuseIdentifier:identifier];
-        annotationView.canShowCallout = YES;
-        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    }
-    annotationView.annotation = annotation;
-    
-    return annotationView;
 }
 
 - (void)mapView:(MKMapView *)mapView
@@ -79,6 +63,10 @@ calloutAccessoryControlTapped:(UIControl *)control {
     DetailsViewController *detailsVC = [DetailsViewController new];
     
     // надо как-то передать объект Artwork
+    NSLog(@"Из массива произведений: %@", self.artArray[4].title);
+    NSLog(@"Из массива аннотаций: %@", mapView.annotations[4].title);
+    // индексы не совпадают
+    
     detailsVC.artwork = view.annotation;
     
     [self presentViewController:detailsVC animated:YES completion:nil];
