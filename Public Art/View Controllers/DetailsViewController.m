@@ -12,6 +12,11 @@
 
 @property (strong, nonatomic) UILabel *artTitle;
 @property (strong, nonatomic) UILabel *artDescription;
+@property (strong, nonatomic) UILabel *artCredits;
+@property (strong, nonatomic) NSString *discipline;
+@property (strong, nonatomic) NSString *creator;
+@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *location;
 
 @end
 
@@ -22,6 +27,7 @@
     self.view.backgroundColor = UIColor.whiteColor;
     [self addArtTitleLabel];
     [self addDismissButton];
+    [self addArtCreditsLabel];
     [self addArtDescriptionLabel];
 }
 
@@ -48,26 +54,46 @@
     [self.view addSubview:self.artTitle];
 }
 
-- (void)addArtCredits {
-    NSString *discipline;
-    NSString *creator;
-    NSNumber *date;
-    NSString *location;
+- (void)addArtCreditsLabel {
+    [self setDiscipline];
+    [self setCreator];
+    [self setDate];
+    [self setLocation];
+    
+    self.artCredits = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.artCredits.text = [NSString stringWithFormat:@"%@ by %@, %@ \nat %@",
+                            self.discipline,
+                            self.creator,
+                            self.date,
+                            self.location];
+    
+    self.artCredits.numberOfLines = 0;
+    self.artCredits.font = [UIFont systemFontOfSize:17 weight:UIFontWeightRegular];
+    CGSize labelSize = [self getLabelSizeForText:self.self.artCredits.text
+                                        withFont:self.self.artCredits.font];
+    CGRect labelFrame = CGRectMake(18,
+                                   CGRectGetMaxY(self.artTitle.frame) + 10,
+                                   labelSize.width,
+                                   labelSize.height);
+    self.artCredits.frame = labelFrame;
+    self.artCredits.textColor = UIColor.blackColor;
+    
+    [self.view addSubview:self.artCredits];
 }
 
 - (void)addArtDescriptionLabel {
-    if ([self.artwork.description isEqual:[NSNull null]]) {
+    if (!self.artwork.description) {
         return;
     }
     
     self.artDescription = [[UILabel alloc] initWithFrame:CGRectZero];
     self.artDescription.text = self.artwork.artDescription;
     self.artDescription.numberOfLines = 0;
-    self.artDescription.font = [UIFont systemFontOfSize:17 weight:UIFontWeightRegular];
+    self.artDescription.font = [UIFont systemFontOfSize:17 weight:UIFontWeightLight];
     CGSize labelSize = [self getLabelSizeForText:self.artTitle.text
                                         withFont:self.artTitle.font];
     CGRect labelFrame = CGRectMake(18,
-                                   CGRectGetMaxY(self.artTitle.frame) + 10,
+                                   CGRectGetMaxY(self.artCredits.frame) + 10,
                                    labelSize.width,
                                    labelSize.height);
     self.artDescription.frame = labelFrame;
@@ -91,11 +117,11 @@
     [self.view addSubview:dismissButton];
 }
 
+#pragma mark - вспомогательное
+
 - (void)dismissVC {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-#pragma mark - вспомогательное
 
 - (CGSize)getLabelSizeForText:(NSString *)text
                      withFont:(UIFont *)font {
@@ -110,6 +136,38 @@
                                      context:nil];
     
     return CGSizeMake(rect.size.width, rect.size.height);
+}
+
+- (void)setDiscipline {
+    if (!self.artwork.discipline) {
+        self.discipline = @"Unknown type artwork";
+    } else {
+        self.discipline = self.artwork.discipline;
+    }
+}
+
+- (void)setCreator {
+    if (!self.artwork.creator) {
+        self.creator = @"Unknown creator";
+    } else {
+        self.creator = self.artwork.creator;
+    }
+}
+
+- (void)setDate {
+    if ([self.artwork.date isEqual:[NSNull null]]) {
+        self.date = @"";
+    } else {
+        self.date = self.artwork.date.description;
+    }
+}
+
+- (void)setLocation {
+    if (!self.artwork.location) {
+        self.location = @"Unknown place";
+    } else {
+        self.location = self.artwork.location;
+    }
 }
 
 @end

@@ -61,12 +61,6 @@
 calloutAccessoryControlTapped:(UIControl *)control {
     
     DetailsViewController *detailsVC = [DetailsViewController new];
-    
-    // надо как-то передать объект Artwork
-    NSLog(@"Из массива произведений: %@", self.artArray[4].title);
-    NSLog(@"Из массива аннотаций: %@", mapView.annotations[4].title);
-    // индексы не совпадают
-    
     ArtAnnotation *myAnnotation = (ArtAnnotation *)view.annotation;
     detailsVC.artwork = myAnnotation.artwork;
     
