@@ -57,4 +57,19 @@
     [self.mapView addAnnotations:annotations];
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    NSString *identifier = @"ID";
+    MKMarkerAnnotationView *annotationView = (MKMarkerAnnotationView *)[mapView                                                                        dequeueReusableAnnotationViewWithIdentifier:identifier];
+    
+    if (!annotationView) {
+        annotationView = [[MKMarkerAnnotationView alloc] initWithAnnotation:annotation
+                                                            reuseIdentifier:identifier];
+        annotationView.canShowCallout = YES;
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    }
+    annotationView.annotation = annotation;
+    
+    return annotationView;
+}
+
 @end
