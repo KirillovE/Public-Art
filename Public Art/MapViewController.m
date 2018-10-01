@@ -77,9 +77,8 @@
 calloutAccessoryControlTapped:(UIControl *)control {
     
     DetailsViewController *detailsVC = [DetailsViewController new];
-    detailsVC.artwork = self.artArray.firstObject;
+    detailsVC.artwork = view.annotation;
     [self presentViewController:detailsVC animated:YES completion:nil];
-    
 }
 
 @end
