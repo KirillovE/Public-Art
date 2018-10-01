@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "Artwork.h"
 #import "APIManager.h"
+#import "DetailsViewController.h"
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 

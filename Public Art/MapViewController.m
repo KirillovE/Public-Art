@@ -72,4 +72,14 @@
     return annotationView;
 }
 
+- (void)mapView:(MKMapView *)mapView
+ annotationView:(MKAnnotationView *)view
+calloutAccessoryControlTapped:(UIControl *)control {
+    
+    DetailsViewController *detailsVC = [DetailsViewController new];
+    detailsVC.artwork = self.artArray.firstObject;
+    [self presentViewController:detailsVC animated:YES completion:nil];
+    
+}
+
 @end
