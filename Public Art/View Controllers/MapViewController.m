@@ -37,8 +37,9 @@
 
 - (void)getArtworks {
     APIManager *apiManager = [APIManager new];
+    __weak __typeof(self)weakSelf = self;
     [apiManager getArtworksWithCompletion:^(NSArray<Artwork *> * _Nonnull artArray) {
-        [self pinAnnotationsFromArray:artArray];
+        [weakSelf pinAnnotationsFromArray:artArray];
     }];
 }
 
