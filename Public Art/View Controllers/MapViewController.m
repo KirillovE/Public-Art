@@ -11,7 +11,6 @@
 @interface MapViewController ()
 
 @property (strong, nonatomic) MKMapView *mapView;
-@property (strong, nonatomic) NSArray<Artwork *> *artArray;
 
 @end
 
@@ -39,16 +38,15 @@
 - (void)getArtworks {
     APIManager *apiManager = [APIManager new];
     [apiManager getArtworksWithCompletion:^(NSArray<Artwork *> * _Nonnull artArray) {
-        self.artArray = artArray;
-        [self showAnnotationsOnMap];
+        [self pinAnnotationsFromArray:artArray];
     }];
 }
 
 #pragma mark - используем методы делегата
 
-- (void)showAnnotationsOnMap {
+- (void)pinAnnotationsFromArray:(NSArray<Artwork *> *)artArray {
     NSMutableArray<ArtMarker *> *annotations = [NSMutableArray array];
-    for (Artwork *artwork in self.artArray) {
+    for (Artwork *artwork in artArray) {
         ArtMarker *annotation = [[ArtMarker alloc] initWithArtwork:artwork];
         [annotations addObject:annotation];
     }
