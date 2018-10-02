@@ -60,6 +60,7 @@
 			children = (
 				3E6511282161235B00B8EE8F /* Public Art */,
 				3E6511272161235B00B8EE8F /* Products */,
+				3E98651E216402A200923E36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +115,13 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		3E98651E216402A200923E36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +153,11 @@
 				TargetAttributes = {
 					3E6511252161235B00B8EE8F = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

@@ -30,6 +30,10 @@
     self.mapView = [[MKMapView alloc] initWithFrame:mapFrame];
     self.mapView.delegate = self;
     
+    CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(21.45, -157.95);
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coords, 70000, 70000);
+    [self.mapView setRegion:region animated:YES];
+    
     [self.mapView registerClass:[ArtAnnotation class] forAnnotationViewWithReuseIdentifier:MKMapViewDefaultAnnotationViewReuseIdentifier];
     
     [self.view addSubview:self.mapView];
