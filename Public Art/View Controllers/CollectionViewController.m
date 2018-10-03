@@ -36,6 +36,7 @@
     
     self.collectionView.backgroundColor = UIColor.cyanColor;
     self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
     
     self.reuseID = @"ReuseIdentifier";
     [self.collectionView registerClass:[CollectionViewCell class]
@@ -56,6 +57,15 @@
     [cell configureCellWithArtwork:self.artArray[indexPath.row]];
 
     return cell;
+}
+
+#pragma mark - Collection View delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    DetailsViewController *detailsVC = [DetailsViewController new];
+    detailsVC.artwork = self.artArray[indexPath.row];
+    
+    [self presentViewController:detailsVC animated:YES completion:nil];
 }
 
 
