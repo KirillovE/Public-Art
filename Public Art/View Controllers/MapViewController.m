@@ -18,11 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setMapView];
-    [self getArtworks];
+    [self setMap];
 }
 
-- (void)setMapView {
+- (void)setArtArray:(NSArray<Artwork *> *)artArray {
+    [self pinAnnotationsFromArray:artArray];
+}
+
+- (void)setMap {
     CGRect mapFrame = CGRectMake(0,
                                  0,
                                  UIScreen.mainScreen.bounds.size.width,
@@ -37,14 +40,6 @@
     [self.mapView registerClass:[ArtAnnotation class] forAnnotationViewWithReuseIdentifier:MKMapViewDefaultAnnotationViewReuseIdentifier];
     
     [self.view addSubview:self.mapView];
-}
-
-- (void)getArtworks {
-    APIManager *apiManager = [APIManager new];
-    __weak __typeof(self)weakSelf = self;
-    [apiManager getArtworksWithCompletion:^(NSArray<Artwork *> * _Nonnull artArray) {
-        [weakSelf pinAnnotationsFromArray:artArray];
-    }];
 }
 
 #pragma mark - используем методы делегата

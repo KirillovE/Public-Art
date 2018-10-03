@@ -10,13 +10,18 @@
 
 @interface CollectionViewController ()
 
+@property (strong, nonatomic) UICollectionView *collectionView;
+
 @end
 
 @implementation CollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setCollection];
+}
+
+- (void)setCollection {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 10;

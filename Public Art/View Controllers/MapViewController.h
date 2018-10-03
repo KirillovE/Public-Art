@@ -16,6 +16,7 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
+@property (strong, nonatomic) NSArray<Artwork *> *artArray;
 
 @end
 

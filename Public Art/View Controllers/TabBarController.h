@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
 #import "CollectionViewController.h"
+#import "APIManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

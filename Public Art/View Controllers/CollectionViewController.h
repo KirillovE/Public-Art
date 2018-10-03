@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CollectionViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (strong, nonatomic) UICollectionView *collectionView;
+
 
 @end
 
