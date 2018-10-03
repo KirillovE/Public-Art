@@ -106,6 +106,7 @@
     
     self.artDescription = [UITextView new];
     self.artDescription.text = self.artefact.artDescription;
+    self.artDescription.editable = NO;
     
     self.artDescription.font = [UIFont systemFontOfSize:17 weight:UIFontWeightThin];
     self.artDescription.textColor = UIColor.darkGrayColor;
