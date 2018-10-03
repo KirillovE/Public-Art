@@ -25,6 +25,8 @@
     if (self) {
         self.backgroundColor = UIColor.whiteColor;
         self.labelSizeHelper = [LabelSizeHelper new];
+        self.layer.cornerRadius = 3;
+        self.clipsToBounds = YES;
         [self addTitleLabel];
         [self addDisciplineLabel];
         [self addDisciplineImageView];
