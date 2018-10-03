@@ -27,6 +27,7 @@
     __weak __typeof(self)weakSelf = self;
     [apiManager getArtworksWithCompletion:^(NSArray<Artwork *> * _Nonnull artArray) {
         weakSelf.mapVC.artArray = artArray;
+        weakSelf.collectionVC.artArray = artArray;
     }];
 }
 

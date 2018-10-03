@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Artwork.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CollectionViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
-
+@property (strong, nonatomic) NSArray<Artwork *> *artArray;
 
 @end
 
