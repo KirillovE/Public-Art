@@ -19,6 +19,7 @@
 		3E65114D2162354D00B8EE8F /* ArtMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65114C2162354D00B8EE8F /* ArtMarker.m */; };
 		3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865192163FF1D00923E36 /* TabBarController.m */; };
 		3E9865262164905B00923E36 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865252164905B00923E36 /* CollectionViewController.m */; };
+		3E98652921649FF300923E36 /* LabelSizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E98652821649FF300923E36 /* LabelSizeHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		3E9865192163FF1D00923E36 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		3E9865242164905B00923E36 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		3E9865252164905B00923E36 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		3E98652721649FF300923E36 /* LabelSizeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelSizeHelper.h; sourceTree = "<group>"; };
+		3E98652821649FF300923E36 /* LabelSizeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelSizeHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,8 @@
 				3E65114C2162354D00B8EE8F /* ArtMarker.m */,
 				3E6511482162310A00B8EE8F /* ArtAnnotation.h */,
 				3E6511492162310A00B8EE8F /* ArtAnnotation.m */,
+				3E98652721649FF300923E36 /* LabelSizeHelper.h */,
+				3E98652821649FF300923E36 /* LabelSizeHelper.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				3E65114121614B5B00B8EE8F /* Artwork.m in Sources */,
 				3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */,
 				3E651147216212DE00B8EE8F /* DetailsViewController.m in Sources */,
+				3E98652921649FF300923E36 /* LabelSizeHelper.m in Sources */,
 				3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */,
 				3E65114421614F9300B8EE8F /* APIManager.m in Sources */,
 				3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */,

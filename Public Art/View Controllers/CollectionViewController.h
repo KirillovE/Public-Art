@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Artwork.h"
+#import "LabelSizeHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
