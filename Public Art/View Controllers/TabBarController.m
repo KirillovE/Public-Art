@@ -19,10 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getArtworks];
+    [self setArtworksToControllers];
 }
 
-- (void)getArtworks {
+/**
+ Передаёт загруженный из интернета массив произведений искусства
+ в контроллеры карты и коллекции
+ */
+- (void)setArtworksToControllers {
     APIManager *apiManager = [APIManager new];
     __weak __typeof(self)weakSelf = self;
     [apiManager getArtworksWithCompletion:^(NSArray<Artwork *> * _Nonnull artArray) {

@@ -18,6 +18,11 @@
 
 @implementation CollectionViewCell
 
+/**
+ Конфигурирует ячейку для показа необходимой информации
+
+ @param artwork Произведение искусства для отображения на ячейке
+ */
 - (void)configureCellWithArtwork:(Artwork *)artwork {
     [self initialSetup];
     
@@ -30,16 +35,19 @@
     [self setDisciplineLayout];
 }
 
+/**
+ Первоначальная настройка ячейки
+ */
 - (void)initialSetup {
     self.backgroundColor = UIColor.whiteColor;
     self.labelSizeHelper = [LabelSizeHelper new];
-    [self addTitle];
-    [self addDiscipline];
+    [self addTitleLabel];
+    [self addDisciplineLabel];
 }
 
 #pragma mark - добавление визуальных элементов
 
-- (void)addTitle {
+- (void)addTitleLabel {
     self.titleLabel = [UILabel new];
     self.titleLabel.numberOfLines = 2;
     
@@ -49,7 +57,7 @@
     [self.contentView addSubview:self.titleLabel];
 }
 
-- (void)addDiscipline {
+- (void)addDisciplineLabel {
     self.disciplineLabel = [UILabel new];
     self.disciplineLabel.numberOfLines = 1;
     

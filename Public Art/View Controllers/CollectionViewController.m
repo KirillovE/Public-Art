@@ -22,6 +22,9 @@
     [self setCollection];
 }
 
+/**
+ Настройка коллекции для дальнейшей работы
+ */
 - (void)setCollection {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.minimumLineSpacing = 10;

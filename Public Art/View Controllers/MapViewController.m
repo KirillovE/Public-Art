@@ -21,10 +21,19 @@
     [self setMap];
 }
 
+/**
+ Переопредлённый сеттер, используемый для показа аннотации
+ после окончания загрузки информации из интернета
+
+ @param artArray Массив произведений искусства
+ */
 - (void)setArtArray:(NSArray<Artwork *> *)artArray {
     [self pinAnnotationsFromArray:artArray];
 }
 
+/**
+ Настройка карты для дальнейшей работы
+ */
 - (void)setMap {
     CGRect mapFrame = CGRectMake(0,
                                  0,
@@ -44,6 +53,11 @@
 
 #pragma mark - используем методы делегата
 
+/**
+ Создаёт аннотации из массива для отображения на карте
+
+ @param artArray Массив произведений искусства
+ */
 - (void)pinAnnotationsFromArray:(NSArray<Artwork *> *)artArray {
     NSMutableArray<ArtMarker *> *annotations = [NSMutableArray array];
     for (Artwork *artwork in artArray) {
