@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E5C3B602164F63300FC33ED /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */; };
 		3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65112A2161235B00B8EE8F /* AppDelegate.m */; };
 		3E65112E2161235B00B8EE8F /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65112D2161235B00B8EE8F /* MapViewController.m */; };
 		3E6511332161235D00B8EE8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6511322161235D00B8EE8F /* Assets.xcassets */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E5C3B5E2164F63300FC33ED /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		3E6511262161235B00B8EE8F /* Public Art.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Public Art.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6511292161235B00B8EE8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E65112A2161235B00B8EE8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				3E65112D2161235B00B8EE8F /* MapViewController.m */,
 				3E9865242164905B00923E36 /* CollectionViewController.h */,
 				3E9865252164905B00923E36 /* CollectionViewController.m */,
+				3E5C3B5E2164F63300FC33ED /* CollectionViewCell.h */,
+				3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */,
 				3E651145216212DE00B8EE8F /* DetailsViewController.h */,
 				3E651146216212DE00B8EE8F /* DetailsViewController.m */,
 			);
@@ -212,6 +217,7 @@
 				3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */,
 				3E651147216212DE00B8EE8F /* DetailsViewController.m in Sources */,
 				3E98652921649FF300923E36 /* LabelSizeHelper.m in Sources */,
+				3E5C3B602164F63300FC33ED /* CollectionViewCell.m in Sources */,
 				3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */,
 				3E65114421614F9300B8EE8F /* APIManager.m in Sources */,
 				3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */,

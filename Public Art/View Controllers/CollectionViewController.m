@@ -12,7 +12,6 @@
 
 @property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSString *reuseID;
-@property (strong, nonatomic) LabelSizeHelper *labelSizeHelper;
 
 @end
 
@@ -20,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.labelSizeHelper = [LabelSizeHelper new];
     [self setCollection];
 }
 
@@ -29,15 +27,15 @@
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 10;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    layout.itemSize = CGSizeMake(100, 100);
-    
+    layout.itemSize = CGSizeMake(150, 150);
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds
                                              collectionViewLayout:layout];
-    self.collectionView.backgroundColor = UIColor.whiteColor;
+    
+    self.collectionView.backgroundColor = UIColor.cyanColor;
     self.collectionView.dataSource = self;
-    self.collectionView.delegate = self;
+    
     self.reuseID = @"ReuseIdentifier";
-    [self.collectionView registerClass:[UICollectionViewCell class]
+    [self.collectionView registerClass:[CollectionViewCell class]
             forCellWithReuseIdentifier:self.reuseID];
     
     [self.view addSubview:self.collectionView];
@@ -50,36 +48,12 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.reuseID
-                                                                           forIndexPath:indexPath];
-    cell.backgroundColor = UIColor.lightGrayColor;
-    [self addTitleOfArtwork:self.artArray[indexPath.row] toContentView:cell];
-    
+    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.reuseID
+                                                                         forIndexPath:indexPath];
+    [cell configureCellWithArtwork:self.artArray[indexPath.row]];
+
     return cell;
 }
 
-#pragma mark - добавление графических элементов
-
-- (void)addTitleOfArtwork:(Artwork *)artwork toContentView:(UIView *)view {
-    if (!artwork.title) { return; }
-
-    UILabel *artTitle = [UILabel new];
-    artTitle.text = artwork.title;
-    artTitle.numberOfLines = 2;
-
-    artTitle.font = [UIFont systemFontOfSize:15 weight:UIFontWeightRegular];
-    artTitle.textColor = UIColor.blackColor;
-
-    CGSize labelSize = [self.labelSizeHelper getLabelSizeForText:artTitle.text
-                                                        withFont:artTitle.font
-                                              addedToContentView:view];
-    CGRect labelFrame = CGRectMake(18,
-                                   30,
-                                   labelSize.width,
-                                   labelSize.height);
-    artTitle.frame = labelFrame;
-
-    [view addSubview:artTitle];
-}
 
 @end

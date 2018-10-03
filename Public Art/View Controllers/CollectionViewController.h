@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Artwork.h"
-#import "LabelSizeHelper.h"
+#import "CollectionViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CollectionViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface CollectionViewController : UIViewController <UICollectionViewDataSource>
 
 @property (strong, nonatomic) NSArray<Artwork *> *artArray;
 
