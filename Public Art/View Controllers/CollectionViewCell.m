@@ -18,14 +18,24 @@
 
 @implementation CollectionViewCell
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = UIColor.whiteColor;
+        self.labelSizeHelper = [LabelSizeHelper new];
+        [self addTitleLabel];
+        [self addDisciplineLabel];
+    }
+    return self;
+}
+
 /**
  Конфигурирует ячейку для показа необходимой информации
 
  @param artwork Произведение искусства для отображения на ячейке
  */
 - (void)configureCellWithArtwork:(Artwork *)artwork {
-    [self initialSetup];
-    
     self.titleLabel.text = artwork.title;
     self.disciplineLabel.text = artwork.discipline;
 }
@@ -33,16 +43,6 @@
 - (void)layoutSubviews {
     [self setTitleLayout];
     [self setDisciplineLayout];
-}
-
-/**
- Первоначальная настройка ячейки
- */
-- (void)initialSetup {
-    self.backgroundColor = UIColor.whiteColor;
-    self.labelSizeHelper = [LabelSizeHelper new];
-    [self addTitleLabel];
-    [self addDisciplineLabel];
 }
 
 #pragma mark - добавление визуальных элементов
