@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Artwork.h"
+#import "Artefact.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailsViewController : UIViewController
 
-@property (strong, nonatomic) Artwork *artwork;
+@property (strong, nonatomic) Artefact *artefact;
 
 @end
 

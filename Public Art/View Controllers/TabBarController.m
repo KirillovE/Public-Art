@@ -19,17 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setArtworksToControllers];
+    [self setArtefactsToControllers];
 }
 
 /**
- Передаёт загруженный из интернета массив произведений искусства
+ Передаёт загруженный из интернета массив артефактов
  в контроллеры карты и коллекции
  */
-- (void)setArtworksToControllers {
+- (void)setArtefactsToControllers {
     APIManager *apiManager = [APIManager new];
     __weak __typeof(self)weakSelf = self;
-    [apiManager getArtworksWithCompletion:^(NSArray<Artwork *> * _Nonnull artArray) {
+    [apiManager getArtefactsWithCompletion:^(NSArray<Artefact *> * _Nonnull artArray) {
         weakSelf.mapVC.artArray = artArray;
         weakSelf.collectionVC.artArray = artArray;
     }];

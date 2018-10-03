@@ -53,10 +53,10 @@
 }
 
 - (void)addArtTitleLabel {
-    if (!self.artwork.title) { return; }
+    if (!self.artefact.title) { return; }
     
     self.artTitle = [UILabel new];
-    self.artTitle.text = self.artwork.title;
+    self.artTitle.text = self.artefact.title;
     self.artTitle.numberOfLines = 0;
     
     self.artTitle.font = [UIFont systemFontOfSize:25 weight:UIFontWeightBlack];
@@ -102,10 +102,10 @@
 }
 
 - (void)addArtDescriptionView {
-    if (!self.artwork.description) { return; }
+    if (!self.artefact.description) { return; }
     
     self.artDescription = [UITextView new];
-    self.artDescription.text = self.artwork.artDescription;
+    self.artDescription.text = self.artefact.artDescription;
     
     self.artDescription.font = [UIFont systemFontOfSize:17 weight:UIFontWeightThin];
     self.artDescription.textColor = UIColor.darkGrayColor;
@@ -158,34 +158,34 @@
 #pragma mark - проверка значений полей на nil и установка
 
 - (void)setDiscipline {
-    if (!self.artwork.discipline) {
-        self.discipline = @"Unknown type artwork";
+    if (!self.artefact.discipline) {
+        self.discipline = @"Unknown type artefact";
     } else {
-        self.discipline = self.artwork.discipline;
+        self.discipline = self.artefact.discipline;
     }
 }
 
 - (void)setCreator {
-    if (!self.artwork.creator) {
+    if (!self.artefact.creator) {
         self.creator = @"Unknown creator";
     } else {
-        self.creator = self.artwork.creator;
+        self.creator = self.artefact.creator;
     }
 }
 
 - (void)setDate {
-    if ([self.artwork.date isEqual:[NSNull null]]) {
+    if (!self.artefact.date) {
         self.date = @"Unknown year";
     } else {
-        self.date = self.artwork.date.description;
+        self.date = self.artefact.date.description;
     }
 }
 
 - (void)setLocation {
-    if (!self.artwork.location) {
+    if (!self.artefact.location) {
         self.location = @"Unknown place";
     } else {
-        self.location = self.artwork.location;
+        self.location = self.artefact.location;
     }
 }
 

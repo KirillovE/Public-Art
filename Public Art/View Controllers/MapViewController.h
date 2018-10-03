@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "Artwork.h"
+#import "Artefact.h"
 #import "APIManager.h"
 #import "DetailsViewController.h"
 #import "ArtAnnotation.h"
@@ -16,7 +16,7 @@
 
 @interface MapViewController : UIViewController <MKMapViewDelegate>
 
-@property (strong, nonatomic) NSArray<Artwork *> *artArray;
+@property (strong, nonatomic) NSArray<Artefact *> *artArray;
 
 @end
 

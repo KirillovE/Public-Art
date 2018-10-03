@@ -37,13 +37,13 @@
 /**
  Конфигурирует ячейку для показа необходимой информации
 
- @param artwork Произведение искусства для отображения на ячейке
+ @param artefact Артефакт для отображения на ячейке
  */
-- (void)configureCellWithArtwork:(Artwork *)artwork {
-    self.titleLabel.text = artwork.title;
-    self.disciplineLabel.text = artwork.discipline;
+- (void)configureCellWithArtefact:(Artefact *)artefact {
+    self.titleLabel.text = artefact.title;
+    self.disciplineLabel.text = artefact.discipline;
     self.disciplineImage.image = [UIImage imageNamed:
-                                  [self chooseImageNameForDisciplineDescription:artwork.discipline.description]];
+                                  [self chooseImageNameForDisciplineDescription:artefact.discipline.description]];
 }
 
 - (void)layoutSubviews {

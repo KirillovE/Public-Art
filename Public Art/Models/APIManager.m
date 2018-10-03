@@ -18,21 +18,21 @@
 @implementation APIManager
 
 /**
- Загружает из сети объекты класса `Artwork`
+ Загружает из сети объекты класса `Artefact`
 
- @param completion массив произведений искусства – объектов класса `Artwork`
+ @param completion массив артефактов – объектов класса `Artefact`
  */
-- (void)getArtworksWithCompletion:(void (^)(NSArray<Artwork *> *artArray))completion
+- (void)getArtefactsWithCompletion:(void (^)(NSArray<Artefact *> *artArray))completion
 {
     [self load:self.urlString withComletion:^(id result) {
         NSArray *jsonArray = result;
         
         if (jsonArray) {
-            NSMutableArray<Artwork *> *artArray = [NSMutableArray array];
+            NSMutableArray<Artefact *> *artArray = [NSMutableArray array];
             
             for (NSDictionary *jsonDictionary in jsonArray) {
-                Artwork *artWork = [[Artwork alloc] initWithDictionary:jsonDictionary];
-                [artArray addObject:artWork];
+                Artefact *artefact = [[Artefact alloc] initWithDictionary:jsonDictionary];
+                [artArray addObject:artefact];
             }
             
             dispatch_async(dispatch_get_main_queue(), ^{

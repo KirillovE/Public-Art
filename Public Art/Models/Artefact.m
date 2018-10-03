@@ -1,14 +1,14 @@
 //
-//  Artwork.m
+//  Artefact.m
 //  Public Art
 //
 //  Created by Евгений Кириллов on 30/09/2018.
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-#import "Artwork.h"
+#import "Artefact.h"
 
-@implementation Artwork
+@implementation Artefact
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict
 {

@@ -7,13 +7,13 @@
 //
 
 #import <MapKit/MapKit.h>
-#import "Artwork.h"
+#import "Artefact.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ArtAnnotation : MKMarkerAnnotationView
 
-@property (strong, nonatomic) Artwork *artwork;
+@property (strong, nonatomic) Artefact *artefact;
 
 @end
 

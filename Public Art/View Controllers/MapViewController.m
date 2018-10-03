@@ -25,9 +25,9 @@
  Переопредлённый сеттер, используемый для показа аннотации
  после окончания загрузки информации из интернета
 
- @param artArray Массив произведений искусства
+ @param artArray Массив артефактов
  */
-- (void)setArtArray:(NSArray<Artwork *> *)artArray {
+- (void)setArtArray:(NSArray<Artefact *> *)artArray {
     [self pinAnnotationsFromArray:artArray];
 }
 
@@ -56,12 +56,12 @@
 /**
  Создаёт аннотации из массива для отображения на карте
 
- @param artArray Массив произведений искусства
+ @param artArray Массив артефактов
  */
-- (void)pinAnnotationsFromArray:(NSArray<Artwork *> *)artArray {
+- (void)pinAnnotationsFromArray:(NSArray<Artefact *> *)artArray {
     NSMutableArray<ArtMarker *> *annotations = [NSMutableArray array];
-    for (Artwork *artwork in artArray) {
-        ArtMarker *annotation = [[ArtMarker alloc] initWithArtwork:artwork];
+    for (Artefact *artefact in artArray) {
+        ArtMarker *annotation = [[ArtMarker alloc] initWithArtefact:artefact];
         [annotations addObject:annotation];
     }
     
@@ -74,7 +74,7 @@ calloutAccessoryControlTapped:(UIControl *)control {
     
     DetailsViewController *detailsVC = [DetailsViewController new];
     ArtAnnotation *myAnnotation = (ArtAnnotation *)view.annotation;
-    detailsVC.artwork = myAnnotation.artwork;
+    detailsVC.artefact = myAnnotation.artefact;
     
     [self presentViewController:detailsVC animated:YES completion:nil];
 }

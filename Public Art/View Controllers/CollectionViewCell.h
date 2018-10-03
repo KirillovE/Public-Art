@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Artwork.h"
+#import "Artefact.h"
 #import "LabelSizeHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CollectionViewCell : UICollectionViewCell
 
-- (void)configureCellWithArtwork:(Artwork *)artwork;
+- (void)configureCellWithArtefact:(Artefact *)artefact;
 
 @end
 

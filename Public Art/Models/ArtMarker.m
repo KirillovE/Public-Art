@@ -17,18 +17,18 @@
 }
 
 - (NSString *)title {
-    return self.artwork.title;
+    return self.artefact.title;
 }
 
 - (NSString *)subtitle {
-    return self.artwork.discipline;
+    return self.artefact.discipline;
 }
 
-- (instancetype)initWithArtwork:(Artwork *)artwork {
+- (instancetype)initWithArtefact:(Artefact *)artefact {
     self = [super init];
     if (self) {
-        self.coordinate = CLLocationCoordinate2DMake(artwork.latitude.doubleValue, artwork.longitude.doubleValue);
-        self.artwork = artwork;
+        self.coordinate = CLLocationCoordinate2DMake(artefact.latitude.doubleValue, artefact.longitude.doubleValue);
+        self.artefact = artefact;
     }
     
     return self;

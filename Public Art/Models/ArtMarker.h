@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "Artwork.h"
+#import "Artefact.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ArtMarker : NSObject <MKAnnotation>
 
-@property (strong, nonatomic) Artwork *artwork;
+@property (strong, nonatomic) Artefact *artefact;
 
-- (instancetype)initWithArtwork:(Artwork *)artwork;
+- (instancetype)initWithArtefact:(Artefact *)artefact;
 
 @end
 

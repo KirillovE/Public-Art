@@ -57,7 +57,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.reuseID
                                                                          forIndexPath:indexPath];
-    [cell configureCellWithArtwork:self.artArray[indexPath.row]];
+    [cell configureCellWithArtefact:self.artArray[indexPath.row]];
 
     return cell;
 }
@@ -66,7 +66,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     DetailsViewController *detailsVC = [DetailsViewController new];
-    detailsVC.artwork = self.artArray[indexPath.row];
+    detailsVC.artefact = self.artArray[indexPath.row];
     
     [self presentViewController:detailsVC animated:YES completion:nil];
 }

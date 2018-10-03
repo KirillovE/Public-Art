@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Artwork.h"
+#import "Artefact.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APIManager : NSObject
 
-- (void)getArtworksWithCompletion:(void (^)(NSArray<Artwork *> *artArray))completion;
+- (void)getArtefactsWithCompletion:(void (^)(NSArray<Artefact *> *artArray))completion;
 
 @end
 

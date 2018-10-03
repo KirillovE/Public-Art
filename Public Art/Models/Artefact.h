@@ -1,5 +1,5 @@
 //
-//  Artwork.h
+//  Artefact.h
 //  Public Art
 //
 //  Created by Евгений Кириллов on 30/09/2018.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Artwork : NSObject
+@interface Artefact : NSObject
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *discipline;

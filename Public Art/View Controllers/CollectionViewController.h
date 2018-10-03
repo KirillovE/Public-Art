@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Artwork.h"
+//#import "Artefact.h"
 #import "CollectionViewCell.h"
 #import "DetailsViewController.h"
 
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (strong, nonatomic) NSArray<Artwork *> *artArray;
+@property (strong, nonatomic) NSArray<Artefact *> *artArray;
 
 @end
 
