@@ -22,7 +22,13 @@
         mapVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Карта"
                                                          image:[UIImage imageNamed:@"map"]
                                                            tag:0];
-        self.viewControllers = @[mapVC];
+        
+        CollectionViewController *collectionVC = [CollectionViewController new];
+        collectionVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Коллекция"
+                                                                image:[UIImage imageNamed:@"gallery"]
+                                                                  tag:1];
+        
+        self.viewControllers = @[mapVC, collectionVC];
         self.selectedIndex = 0;
     }
     return self;
