@@ -18,6 +18,7 @@
 		3E651147216212DE00B8EE8F /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E651146216212DE00B8EE8F /* DetailsViewController.m */; };
 		3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6511492162310A00B8EE8F /* ArtAnnotation.m */; };
 		3E65114D2162354D00B8EE8F /* ArtMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65114C2162354D00B8EE8F /* ArtMarker.m */; };
+		3E848C722165E21A00035572 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E848C712165E21A00035572 /* SearchController.m */; };
 		3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865192163FF1D00923E36 /* TabBarController.m */; };
 		3E9865262164905B00923E36 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865252164905B00923E36 /* CollectionViewController.m */; };
 		3E98652921649FF300923E36 /* LabelSizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E98652821649FF300923E36 /* LabelSizeHelper.m */; };
@@ -45,6 +46,8 @@
 		3E6511492162310A00B8EE8F /* ArtAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtAnnotation.m; sourceTree = "<group>"; };
 		3E65114B2162354D00B8EE8F /* ArtMarker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtMarker.h; sourceTree = "<group>"; };
 		3E65114C2162354D00B8EE8F /* ArtMarker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtMarker.m; sourceTree = "<group>"; };
+		3E848C702165E21A00035572 /* SearchController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
+		3E848C712165E21A00035572 /* SearchController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
 		3E9865182163FF1D00923E36 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		3E9865192163FF1D00923E36 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		3E9865242164905B00923E36 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
@@ -84,7 +87,7 @@
 		3E6511282161235B00B8EE8F /* Public Art */ = {
 			isa = PBXGroup;
 			children = (
-				3E6511512162451F00B8EE8F /* View Controllers */,
+				3E6511512162451F00B8EE8F /* Controllers */,
 				3E6511502162451300B8EE8F /* Models */,
 				3E6511322161235D00B8EE8F /* Assets.xcassets */,
 				3E6511342161235D00B8EE8F /* LaunchScreen.storyboard */,
@@ -113,7 +116,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3E6511512162451F00B8EE8F /* View Controllers */ = {
+		3E6511512162451F00B8EE8F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				3E9865182163FF1D00923E36 /* TabBarController.h */,
@@ -126,8 +129,10 @@
 				3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */,
 				3E651145216212DE00B8EE8F /* DetailsViewController.h */,
 				3E651146216212DE00B8EE8F /* DetailsViewController.m */,
+				3E848C702165E21A00035572 /* SearchController.h */,
+				3E848C712165E21A00035572 /* SearchController.m */,
 			);
-			path = "View Controllers";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		3E98651E216402A200923E36 /* Frameworks */ = {
@@ -220,6 +225,7 @@
 				3E5C3B602164F63300FC33ED /* CollectionViewCell.m in Sources */,
 				3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */,
 				3E65114421614F9300B8EE8F /* APIManager.m in Sources */,
+				3E848C722165E21A00035572 /* SearchController.m in Sources */,
 				3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */,
 				3E9865262164905B00923E36 /* CollectionViewController.m in Sources */,
 				3E65114D2162354D00B8EE8F /* ArtMarker.m in Sources */,
