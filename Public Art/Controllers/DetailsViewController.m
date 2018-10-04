@@ -43,7 +43,7 @@
                                           CGRectGetMaxY(self.view.bounds) - 60,
                                           50,
                                           50);
-    self.dismissButton.backgroundColor = UIColor.redColor;
+    self.dismissButton.backgroundColor = UIColor.blueColor;
     self.dismissButton.layer.cornerRadius = 25;
     [self.dismissButton addTarget:self
                            action:@selector(dismissVC)
