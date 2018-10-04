@@ -7,11 +7,13 @@
 //
 
 #import "CollectionViewController.h"
+#import "ResultsCollectionViewController.h"
 
-@interface CollectionViewController ()
+@interface CollectionViewController () <UISearchResultsUpdating>
 
-@property (strong, nonatomic) UICollectionView *collectionView;
 @property (strong, nonatomic) NSString *reuseID;
+@property (strong, nonatomic) UISearchController *searchController;
+@property (strong, nonatomic) ResultsCollectionViewController *resultsController;
 
 @end
 
@@ -20,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setCollection];
+    [self searchControllerSetup];
 }
 
 /**
@@ -48,6 +51,18 @@
     [self.view addSubview:self.collectionView];
 }
 
+/**
+ Настройка поисковой строки
+ */
+- (void)searchControllerSetup {
+    self.resultsController = [ResultsCollectionViewController new];
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsController];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.searchBar.placeholder = @"Title to search";
+    
+    [self.view addSubview:self.searchController.searchBar];
+}
+
 #pragma mark - Collection View data source
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -69,6 +84,17 @@
     detailsVC.artefact = self.artArray[indexPath.row];
     
     [self presentViewController:detailsVC animated:YES completion:nil];
+}
+
+#pragma mark - Search Results Updating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    if (searchController.searchBar.text) {
+        NSPredicate *titlePredicate = [NSPredicate predicateWithFormat:@"SELF.title CONTAINS[cd] %@", searchController.searchBar.text];
+        self.resultsController.artArray = [self.artArray filteredArrayUsingPredicate:titlePredicate];
+        
+        [self.resultsController updateCollection];
+    }
 }
 
 
