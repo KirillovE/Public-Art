@@ -21,8 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setCollection];
+    self.view.backgroundColor = UIColor.cyanColor;
     [self searchControllerSetup];
+    [self setCollection];
 }
 
 /**
@@ -37,7 +38,9 @@
     layout.minimumLineSpacing = 5;
     layout.minimumInteritemSpacing = 5;
     
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds
+    CGRect collectionFrame = self.view.bounds;
+    collectionFrame.origin.y = CGRectGetMaxY(self.searchController.searchBar.frame);
+    self.collectionView = [[UICollectionView alloc] initWithFrame:collectionFrame
                                              collectionViewLayout:layout];
     
     self.collectionView.backgroundColor = UIColor.cyanColor;
@@ -59,6 +62,13 @@
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsController];
     self.searchController.searchResultsUpdater = self;
     self.searchController.searchBar.placeholder = @"Title to search";
+    self.searchController.searchBar.barTintColor = UIColor.cyanColor;
+    
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    CGFloat topPadding = window.safeAreaInsets.top;
+    CGRect searchFrame = self.searchController.searchBar.frame;
+    searchFrame.origin.y = topPadding;
+    self.searchController.searchBar.frame = searchFrame;
     
     [self.view addSubview:self.searchController.searchBar];
 }
