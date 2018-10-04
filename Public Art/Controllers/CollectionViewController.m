@@ -27,6 +27,25 @@
 }
 
 /**
+ Настройка поисковой строки
+ */
+- (void)searchControllerSetup {
+    self.resultsController = [ResultsCollectionViewController new];
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsController];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.searchBar.placeholder = @"Title or discipline...";
+    self.searchController.searchBar.barTintColor = UIColor.cyanColor;
+    
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    CGFloat topPadding = window.safeAreaInsets.top;
+    CGRect searchFrame = self.searchController.searchBar.frame;
+    searchFrame.origin.y = topPadding;
+    self.searchController.searchBar.frame = searchFrame;
+    
+    [self.view addSubview:self.searchController.searchBar];
+}
+
+/**
  Настройка коллекции для дальнейшей работы
  */
 - (void)setCollection {
@@ -52,25 +71,6 @@
             forCellWithReuseIdentifier:self.reuseID];
     
     [self.view addSubview:self.collectionView];
-}
-
-/**
- Настройка поисковой строки
- */
-- (void)searchControllerSetup {
-    self.resultsController = [ResultsCollectionViewController new];
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsController];
-    self.searchController.searchResultsUpdater = self;
-    self.searchController.searchBar.placeholder = @"Title to search";
-    self.searchController.searchBar.barTintColor = UIColor.cyanColor;
-    
-    UIWindow *window = UIApplication.sharedApplication.keyWindow;
-    CGFloat topPadding = window.safeAreaInsets.top;
-    CGRect searchFrame = self.searchController.searchBar.frame;
-    searchFrame.origin.y = topPadding;
-    self.searchController.searchBar.frame = searchFrame;
-    
-    [self.view addSubview:self.searchController.searchBar];
 }
 
 #pragma mark - Collection View data source
@@ -100,8 +100,17 @@
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     if (searchController.searchBar.text) {
-        NSPredicate *titlePredicate = [NSPredicate predicateWithFormat:@"SELF.title CONTAINS[cd] %@", searchController.searchBar.text];
-        self.resultsController.artArray = [self.artArray filteredArrayUsingPredicate:titlePredicate];
+        NSPredicate *titlePredicate = [NSPredicate
+                                       predicateWithFormat:@"SELF.title CONTAINS[cd] %@", searchController.searchBar.text];
+        NSPredicate *disciplinePredicate = [NSPredicate
+                                            predicateWithFormat:@"SELF.discipline CONTAINS[cd] %@", searchController.searchBar.text];
+        
+        NSArray<Artefact *> *matchedTitles = [self.artArray filteredArrayUsingPredicate:titlePredicate];
+        NSArray<Artefact *> *matchedDisciplines = [self.artArray filteredArrayUsingPredicate:disciplinePredicate];
+        
+        self.resultsController.artArray = matchedTitles ?
+        [matchedTitles arrayByAddingObjectsFromArray:matchedDisciplines] :
+        matchedDisciplines;
         
         [self.resultsController updateCollection];
     }
