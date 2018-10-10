@@ -14,6 +14,8 @@
 @property (strong, nonatomic) NSString *reuseID;
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) ResultsCollectionViewController *resultsController;
+@property (strong, nonatomic) UIBarButtonItem *rightBarButton;
+@property (nonatomic) BOOL selectionModeActive;
 
 @end
 
@@ -21,16 +23,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setScreenAppearance];
+    [self setRightBarButton];
+    [self setSearchController];
+    [self setCollectionView];
+}
+
+#pragma mark - Настройка отображения экрана
+
+/**
+ Первоначальная настройка отображения экрана
+ */
+- (void)setScreenAppearance {
     self.view.backgroundColor = UIColor.cyanColor;
     self.title = @"Collection";
-    [self searchControllerSetup];
-    [self setCollection];
+    self.selectionModeActive = NO;
+}
+
+/**
+ Настройка кнопки выделения ячеек
+ */
+- (void)setRightBarButton {
+    self.rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"select"
+                                                           style:UIBarButtonItemStylePlain
+                                                          target:self
+                                                          action:@selector(rightBarButtonPressed)];
+    self.navigationItem.rightBarButtonItem = self.rightBarButton;
 }
 
 /**
  Настройка поисковой строки
  */
-- (void)searchControllerSetup {
+- (void)setSearchController {
     self.resultsController = [ResultsCollectionViewController new];
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsController];
     self.searchController.searchResultsUpdater = self;
@@ -41,7 +66,7 @@
 /**
  Настройка коллекции для дальнейшей работы
  */
-- (void)setCollection {
+- (void)setCollectionView {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
@@ -64,6 +89,21 @@
             forCellWithReuseIdentifier:self.reuseID];
     
     [self.view addSubview:self.collectionView];
+}
+
+#pragma mark - Прочие методы
+
+/**
+ Переключает режимы работы с коллекцией (выделение/просмотр)
+ */
+- (void)rightBarButtonPressed {
+    if (self.selectionModeActive) {
+        self.rightBarButton.title = @"select";
+        self.selectionModeActive = NO;
+    } else {
+        self.rightBarButton.title = @"cancel";
+        self.selectionModeActive = YES;
+    }
 }
 
 #pragma mark - Collection View data source
