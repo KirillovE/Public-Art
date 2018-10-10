@@ -141,12 +141,10 @@
         NSPredicate *disciplinePredicate = [NSPredicate
                                             predicateWithFormat:@"SELF.discipline CONTAINS[cd] %@", searchController.searchBar.text];
         
-        NSArray<Artefact *> *matchedTitles = [self.artArray filteredArrayUsingPredicate:titlePredicate];
-        NSArray<Artefact *> *matchedDisciplines = [self.artArray filteredArrayUsingPredicate:disciplinePredicate];
-        
-        self.resultsController.artArray = matchedTitles ?
-        [matchedTitles arrayByAddingObjectsFromArray:matchedDisciplines] :
-        matchedDisciplines;
+        NSCompoundPredicate *compoundPredicate =  [NSCompoundPredicate
+                                                   orPredicateWithSubpredicates:@[titlePredicate,
+                                                                                  disciplinePredicate]];
+        self.resultsController.artArray = [self.artArray filteredArrayUsingPredicate:compoundPredicate];
         
         [self.resultsController updateCollection];
     }
