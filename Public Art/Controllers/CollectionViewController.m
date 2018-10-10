@@ -16,6 +16,7 @@
 @property (strong, nonatomic) ResultsCollectionViewController *resultsController;
 @property (strong, nonatomic) UIBarButtonItem *rightBarButton;
 @property (nonatomic) BOOL selectionModeActive;
+@property (strong, nonatomic) NSMutableArray<NSIndexPath *> *highlightedCells;
 
 @end
 
@@ -24,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setScreenAppearance];
+    [self setInitialValues];
     [self setRightBarButton];
     [self setSearchController];
     [self setCollectionView];
@@ -33,12 +34,13 @@
 #pragma mark - Настройка отображения экрана
 
 /**
- Первоначальная настройка отображения экрана
+ Первоначальная настройка значений переменных
  */
-- (void)setScreenAppearance {
+- (void)setInitialValues {
     self.view.backgroundColor = UIColor.cyanColor;
     self.title = @"Collection";
     self.selectionModeActive = NO;
+    self.highlightedCells = [NSMutableArray array];
 }
 
 /**
@@ -110,8 +112,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (self.selectionModeActive) {
-        UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
-        [self highlightCell:cell];
+        [self highlightCellForIndexPath:indexPath];
     } else {
         [self showDetailsViewControllerForIndexPath:indexPath];
     }
@@ -147,6 +148,7 @@
     if (self.selectionModeActive) {
         self.rightBarButton.title = @"select";
         self.selectionModeActive = NO;
+        [self clearSelection];
     } else {
         self.rightBarButton.title = @"cancel";
         self.selectionModeActive = YES;
@@ -168,11 +170,23 @@
 /**
  Выделяет ячейку
 
- @param cell Ячейка для выделения
+ @param indexPath Индекс ячейки, которую нужно выделить
  */
-- (void)highlightCell:(UICollectionViewCell *)cell {
-    cell.layer.borderColor = UIColor.lightGrayColor.CGColor;
+- (void)highlightCellForIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+    cell.layer.borderColor = UIColor.blueColor.CGColor;
     cell.layer.borderWidth = 5;
+    [self.highlightedCells addObject:indexPath];
+}
+
+/**
+ Убирает выделение ячеек
+ */
+- (void)clearSelection {
+    for (NSIndexPath *indexPath in self.highlightedCells) {
+        UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+        cell.layer.borderWidth = 0;
+    }
 }
 
 @end
