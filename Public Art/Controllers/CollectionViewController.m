@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.cyanColor;
+    self.title = @"Коллекция";
     [self searchControllerSetup];
     [self setCollection];
 }
@@ -34,15 +35,7 @@
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsController];
     self.searchController.searchResultsUpdater = self;
     self.searchController.searchBar.placeholder = @"Title or discipline...";
-    self.searchController.searchBar.barTintColor = UIColor.cyanColor;
-    
-    UIWindow *window = UIApplication.sharedApplication.keyWindow;
-    CGFloat topPadding = window.safeAreaInsets.top;
-    CGRect searchFrame = self.searchController.searchBar.frame;
-    searchFrame.origin.y = topPadding;
-    self.searchController.searchBar.frame = searchFrame;
-    
-    [self.view addSubview:self.searchController.searchBar];
+    self.navigationItem.searchController = self.searchController;
 }
 
 /**

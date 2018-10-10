@@ -45,11 +45,14 @@
                                                                 tag:0];
         
         self.collectionVC = [CollectionViewController new];
+        UINavigationController *navigationVC = [[UINavigationController alloc]
+                                                initWithRootViewController:self.collectionVC];
+        navigationVC.navigationBar.prefersLargeTitles = YES;
         self.collectionVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Коллекция"
                                                                      image:[UIImage imageNamed:@"gallery"]
                                                                        tag:1];
         
-        self.viewControllers = @[self.mapVC, self.collectionVC];
+        self.viewControllers = @[self.mapVC, navigationVC];
         self.selectedIndex = 0;
     }
     return self;
