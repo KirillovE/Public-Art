@@ -14,7 +14,8 @@
 @property (strong, nonatomic) NSString *reuseID;
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) ResultsCollectionViewController *resultsController;
-@property (strong, nonatomic) UIBarButtonItem *rightBarButton;
+@property (strong, nonatomic) UIBarButtonItem *selectCancelBarButton;
+@property (strong, nonatomic) UIBarButtonItem *favoritesBarButton;
 @property (nonatomic) BOOL selectionModeActive;
 @property (strong, nonatomic) NSMutableArray<NSIndexPath *> *highlightedCells;
 
@@ -26,7 +27,7 @@
     [super viewDidLoad];
     
     [self setInitialValues];
-    [self setRightBarButton];
+    [self setSelectCancelButton];
     [self setSearchController];
     [self setCollectionView];
 }
@@ -46,12 +47,24 @@
 /**
  Настройка кнопки выделения ячеек
  */
-- (void)setRightBarButton {
-    self.rightBarButton = [[UIBarButtonItem alloc] initWithTitle:@"select"
-                                                           style:UIBarButtonItemStylePlain
-                                                          target:self
-                                                          action:@selector(rightBarButtonPressed)];
-    self.navigationItem.rightBarButtonItem = self.rightBarButton;
+- (void)setSelectCancelButton {
+    self.selectCancelBarButton = [[UIBarButtonItem alloc] initWithTitle:@"select"
+                                                                  style:UIBarButtonItemStylePlain
+                                                                 target:self
+                                                                 action:@selector(selectCancelBarButtonPressed)];
+    self.navigationItem.rightBarButtonItem = self.selectCancelBarButton;
+}
+
+/**
+ Настройка кнопки сохранения артефакта в избранное
+ */
+- (void)setFavoritesButton {
+    self.favoritesBarButton = [[UIBarButtonItem alloc] initWithTitle:@"save"
+                                                               style:UIBarButtonItemStylePlain
+                                                              target:self
+                                                              action:@selector(addToFavorites)];
+    self.navigationItem.leftBarButtonItem = self.favoritesBarButton;
+    self.navigationItem.leftBarButtonItem.enabled = NO;
 }
 
 /**
@@ -144,15 +157,23 @@
 /**
  Переключает режимы работы с коллекцией (выделение/просмотр)
  */
-- (void)rightBarButtonPressed {
+- (void)selectCancelBarButtonPressed {
     if (self.selectionModeActive) {
-        self.rightBarButton.title = @"select";
+        self.selectCancelBarButton.title = @"select";
         self.selectionModeActive = NO;
         [self clearSelection];
     } else {
-        self.rightBarButton.title = @"cancel";
+        self.selectCancelBarButton.title = @"cancel";
         self.selectionModeActive = YES;
+        [self setFavoritesButton];
     }
+}
+
+/**
+ Добавляет выделенные ячейки в избранное
+ */
+- (void)addToFavorites {
+    
 }
 
 /**
@@ -176,7 +197,9 @@
     UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
     cell.layer.borderColor = UIColor.blueColor.CGColor;
     cell.layer.borderWidth = 5;
+    
     [self.highlightedCells addObject:indexPath];
+    self.favoritesBarButton.enabled = YES;
 }
 
 /**
@@ -187,6 +210,8 @@
         UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
         cell.layer.borderWidth = 0;
     }
+    [self.highlightedCells removeAllObjects];
+    self.navigationItem.leftBarButtonItem = nil;
 }
 
 @end
