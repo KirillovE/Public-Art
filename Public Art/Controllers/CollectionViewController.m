@@ -125,7 +125,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (self.selectionModeActive) {
-        [self highlightCellForIndexPath:indexPath];
+        [self highlightCellIfNeededForIndexPath:indexPath];
     } else {
         [self showDetailsViewControllerForIndexPath:indexPath];
     }
@@ -193,13 +193,23 @@
 
  @param indexPath Индекс ячейки, которую нужно выделить
  */
-- (void)highlightCellForIndexPath:(NSIndexPath *)indexPath {
+- (void)highlightCellIfNeededForIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
-    cell.layer.borderColor = UIColor.blueColor.CGColor;
-    cell.layer.borderWidth = 5;
     
-    [self.highlightedCells addObject:indexPath];
-    self.favoritesBarButton.enabled = YES;
+    if ([self.highlightedCells containsObject:indexPath]) {
+        cell.layer.borderWidth = 0;
+        [self.highlightedCells removeObject:indexPath];
+    } else {
+        cell.layer.borderColor = UIColor.blueColor.CGColor;
+        cell.layer.borderWidth = 5;
+        [self.highlightedCells addObject:indexPath];
+    }
+    
+    if (self.highlightedCells.count > 0) {
+        self.favoritesBarButton.enabled = YES;
+    } else {
+        self.favoritesBarButton.enabled = NO;
+    }
 }
 
 /**
