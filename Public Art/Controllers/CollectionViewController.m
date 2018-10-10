@@ -91,21 +91,6 @@
     [self.view addSubview:self.collectionView];
 }
 
-#pragma mark - Прочие методы
-
-/**
- Переключает режимы работы с коллекцией (выделение/просмотр)
- */
-- (void)rightBarButtonPressed {
-    if (self.selectionModeActive) {
-        self.rightBarButton.title = @"select";
-        self.selectionModeActive = NO;
-    } else {
-        self.rightBarButton.title = @"cancel";
-        self.selectionModeActive = YES;
-    }
-}
-
 #pragma mark - Collection View data source
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -123,10 +108,14 @@
 #pragma mark - Collection View delegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    DetailsViewController *detailsVC = [DetailsViewController new];
-    detailsVC.artefact = self.artArray[indexPath.row];
     
-    [self presentViewController:detailsVC animated:YES completion:nil];
+    if (self.selectionModeActive) {
+        UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+        [self highlightCell:cell];
+    } else {
+        [self showDetailsViewControllerForIndexPath:indexPath];
+    }
+    
 }
 
 #pragma mark - Search Results Updating
@@ -149,5 +138,41 @@
     }
 }
 
+#pragma mark - Прочие методы
+
+/**
+ Переключает режимы работы с коллекцией (выделение/просмотр)
+ */
+- (void)rightBarButtonPressed {
+    if (self.selectionModeActive) {
+        self.rightBarButton.title = @"select";
+        self.selectionModeActive = NO;
+    } else {
+        self.rightBarButton.title = @"cancel";
+        self.selectionModeActive = YES;
+    }
+}
+
+/**
+ Показывает модально экран с подробной информацией об артефакте
+
+ @param indexPath Индекс артефакта для отображения
+ */
+- (void)showDetailsViewControllerForIndexPath:(NSIndexPath * _Nonnull)indexPath {
+    DetailsViewController *detailsVC = [DetailsViewController new];
+    detailsVC.artefact = self.artArray[indexPath.row];
+    
+    [self presentViewController:detailsVC animated:YES completion:nil];
+}
+
+/**
+ Выделяет ячейку
+
+ @param cell Ячейка для выделения
+ */
+- (void)highlightCell:(UICollectionViewCell *)cell {
+    cell.layer.borderColor = UIColor.lightGrayColor.CGColor;
+    cell.layer.borderWidth = 5;
+}
 
 @end
