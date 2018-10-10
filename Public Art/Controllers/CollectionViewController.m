@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.cyanColor;
-    self.title = @"Коллекция";
+    self.title = @"Collection";
     [self searchControllerSetup];
     [self setCollection];
 }

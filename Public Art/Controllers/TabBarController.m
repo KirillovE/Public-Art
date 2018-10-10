@@ -40,7 +40,7 @@
     self = [super init];
     if (self) {
         self.mapVC = [MapViewController new];
-        self.mapVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Карта"
+        self.mapVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Map"
                                                               image:[UIImage imageNamed:@"map"]
                                                                 tag:0];
         
@@ -48,7 +48,7 @@
         UINavigationController *navigationVC = [[UINavigationController alloc]
                                                 initWithRootViewController:self.collectionVC];
         navigationVC.navigationBar.prefersLargeTitles = YES;
-        self.collectionVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Коллекция"
+        self.collectionVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Collection"
                                                                      image:[UIImage imageNamed:@"gallery"]
                                                                        tag:1];
         
