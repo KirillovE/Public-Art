@@ -16,6 +16,10 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString *urlString = @"https://data.honolulu.gov/resource/csir-pcj2.json";
+    NSURL *url = [NSURL URLWithString:urlString];
+    [NSUserDefaults.standardUserDefaults setURL:url forKey:@"apiURL"];
+    
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.window.rootViewController = [TabBarController new];
     [self.window makeKeyAndVisible];

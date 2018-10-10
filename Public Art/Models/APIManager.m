@@ -24,7 +24,8 @@
  */
 - (void)getArtefactsWithCompletion:(void (^)(NSArray<Artefact *> *artArray))completion
 {
-    [self load:self.urlString withComletion:^(id result) {
+    NSURL *url = [NSUserDefaults.standardUserDefaults URLForKey:@"apiURL"];
+    [self load:url withComletion:^(id result) {
         NSArray *jsonArray = result;
         
         if (jsonArray) {
@@ -42,13 +43,12 @@
     }];
 }
 
-- (void)load:(NSString *)urlString withComletion:(void (^)(id result))completion
+- (void)load:(NSURL *)url withComletion:(void (^)(id result))completion
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     });
     
-    NSURL *url = [NSURL URLWithString:urlString];
     [[self.urlSession dataTaskWithURL:url
                  completionHandler:^(NSData * _Nullable data,
                                      NSURLResponse * _Nullable response,
