@@ -21,6 +21,7 @@
 		3E65114D2162354D00B8EE8F /* ArtMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65114C2162354D00B8EE8F /* ArtMarker.m */; };
 		3E78DD51216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD4F216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m */; };
 		3E78DD52216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD50216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m */; };
+		3E78DD55216F6DD200C7A099 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD54216F6DD200C7A099 /* CoreDataHelper.m */; };
 		3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865192163FF1D00923E36 /* TabBarController.m */; };
 		3E9865262164905B00923E36 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865252164905B00923E36 /* CollectionViewController.m */; };
 		3E98652921649FF300923E36 /* LabelSizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E98652821649FF300923E36 /* LabelSizeHelper.m */; };
@@ -55,6 +56,8 @@
 		3E78DD4E216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteArtefactMO+CoreDataClass.h"; sourceTree = "<group>"; };
 		3E78DD4F216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteArtefactMO+CoreDataClass.m"; sourceTree = "<group>"; };
 		3E78DD50216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteArtefactMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3E78DD53216F6DD200C7A099 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		3E78DD54216F6DD200C7A099 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		3E9865182163FF1D00923E36 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		3E9865192163FF1D00923E36 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		3E9865242164905B00923E36 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
@@ -154,11 +157,13 @@
 		3EA1B287216F6BA900C3D0A2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				3E78DD4D216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.h */,
+				3EA1B26D216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld */,
 				3E78DD4E216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.h */,
 				3E78DD4F216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m */,
+				3E78DD4D216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.h */,
 				3E78DD50216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m */,
-				3EA1B26D216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld */,
+				3E78DD53216F6DD200C7A099 /* CoreDataHelper.h */,
+				3E78DD54216F6DD200C7A099 /* CoreDataHelper.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				3E98652921649FF300923E36 /* LabelSizeHelper.m in Sources */,
 				3E5C3B602164F63300FC33ED /* CollectionViewCell.m in Sources */,
 				3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */,
+				3E78DD55216F6DD200C7A099 /* CoreDataHelper.m in Sources */,
 				3E65114421614F9300B8EE8F /* APIManager.m in Sources */,
 				3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */,
 				3EA1B26F216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld in Sources */,
