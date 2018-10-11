@@ -19,9 +19,12 @@
 		3E651147216212DE00B8EE8F /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E651146216212DE00B8EE8F /* DetailsViewController.m */; };
 		3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6511492162310A00B8EE8F /* ArtAnnotation.m */; };
 		3E65114D2162354D00B8EE8F /* ArtMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65114C2162354D00B8EE8F /* ArtMarker.m */; };
+		3E78DD51216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD4F216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m */; };
+		3E78DD52216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD50216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m */; };
 		3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865192163FF1D00923E36 /* TabBarController.m */; };
 		3E9865262164905B00923E36 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865252164905B00923E36 /* CollectionViewController.m */; };
 		3E98652921649FF300923E36 /* LabelSizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E98652821649FF300923E36 /* LabelSizeHelper.m */; };
+		3EA1B26F216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1B26D216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,12 +51,17 @@
 		3E6511492162310A00B8EE8F /* ArtAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtAnnotation.m; sourceTree = "<group>"; };
 		3E65114B2162354D00B8EE8F /* ArtMarker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtMarker.h; sourceTree = "<group>"; };
 		3E65114C2162354D00B8EE8F /* ArtMarker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtMarker.m; sourceTree = "<group>"; };
+		3E78DD4D216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteArtefactMO+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3E78DD4E216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteArtefactMO+CoreDataClass.h"; sourceTree = "<group>"; };
+		3E78DD4F216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteArtefactMO+CoreDataClass.m"; sourceTree = "<group>"; };
+		3E78DD50216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteArtefactMO+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3E9865182163FF1D00923E36 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		3E9865192163FF1D00923E36 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		3E9865242164905B00923E36 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		3E9865252164905B00923E36 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		3E98652721649FF300923E36 /* LabelSizeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelSizeHelper.h; sourceTree = "<group>"; };
 		3E98652821649FF300923E36 /* LabelSizeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelSizeHelper.m; sourceTree = "<group>"; };
+		3EA1B26E216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteArtefact.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 			children = (
 				3E6511512162451F00B8EE8F /* Controllers */,
 				3E6511502162451300B8EE8F /* Models */,
+				3EA1B287216F6BA900C3D0A2 /* CoreData */,
 				3E6511322161235D00B8EE8F /* Assets.xcassets */,
 				3E6511342161235D00B8EE8F /* LaunchScreen.storyboard */,
 				3E6511372161235D00B8EE8F /* Info.plist */,
@@ -142,6 +151,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3EA1B287216F6BA900C3D0A2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3E78DD4D216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.h */,
+				3E78DD4E216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.h */,
+				3E78DD4F216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m */,
+				3E78DD50216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m */,
+				3EA1B26D216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,6 +194,7 @@
 				TargetAttributes = {
 					3E6511252161235B00B8EE8F = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -219,6 +241,7 @@
 				3E65112E2161235B00B8EE8F /* MapViewController.m in Sources */,
 				3E6511392161235D00B8EE8F /* main.m in Sources */,
 				3E65114121614B5B00B8EE8F /* Artefact.m in Sources */,
+				3E78DD52216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m in Sources */,
 				3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */,
 				3E651147216212DE00B8EE8F /* DetailsViewController.m in Sources */,
 				3E5C3B632166076E00FC33ED /* ResultsCollectionViewController.m in Sources */,
@@ -227,6 +250,8 @@
 				3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */,
 				3E65114421614F9300B8EE8F /* APIManager.m in Sources */,
 				3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */,
+				3EA1B26F216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld in Sources */,
+				3E78DD51216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m in Sources */,
 				3E9865262164905B00923E36 /* CollectionViewController.m in Sources */,
 				3E65114D2162354D00B8EE8F /* ArtMarker.m in Sources */,
 			);
@@ -362,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HPH483Z2C;
 				INFOPLIST_FILE = "Public Art/Info.plist";
@@ -372,6 +398,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Triad.Public-Art";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Public Art-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -380,6 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8HPH483Z2C;
 				INFOPLIST_FILE = "Public Art/Info.plist";
@@ -390,6 +420,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Triad.Public-Art";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Public Art-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -416,6 +448,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3EA1B26D216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3EA1B26E216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodel */,
+			);
+			currentVersion = 3EA1B26E216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodel */;
+			path = FavoriteArtefact.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3E65111E2161235B00B8EE8F /* Project object */;
 }
