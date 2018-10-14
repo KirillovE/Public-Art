@@ -26,6 +26,7 @@
 		3E9865262164905B00923E36 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865252164905B00923E36 /* CollectionViewController.m */; };
 		3E98652921649FF300923E36 /* LabelSizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E98652821649FF300923E36 /* LabelSizeHelper.m */; };
 		3EA1B26F216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1B26D216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld */; };
+		3EDC9C542173E067002FBFA5 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C532173E067002FBFA5 /* ContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		3E98652721649FF300923E36 /* LabelSizeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelSizeHelper.h; sourceTree = "<group>"; };
 		3E98652821649FF300923E36 /* LabelSizeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelSizeHelper.m; sourceTree = "<group>"; };
 		3EA1B26E216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteArtefact.xcdatamodel; sourceTree = "<group>"; };
+		3EDC9C522173E066002FBFA5 /* ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		3EDC9C532173E067002FBFA5 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 			children = (
 				3E9865182163FF1D00923E36 /* TabBarController.h */,
 				3E9865192163FF1D00923E36 /* TabBarController.m */,
+				3EDC9C522173E066002FBFA5 /* ContentViewController.h */,
+				3EDC9C532173E067002FBFA5 /* ContentViewController.m */,
 				3E65112C2161235B00B8EE8F /* MapViewController.h */,
 				3E65112D2161235B00B8EE8F /* MapViewController.m */,
 				3E9865242164905B00923E36 /* CollectionViewController.h */,
@@ -245,6 +250,7 @@
 			files = (
 				3E65112E2161235B00B8EE8F /* MapViewController.m in Sources */,
 				3E6511392161235D00B8EE8F /* main.m in Sources */,
+				3EDC9C542173E067002FBFA5 /* ContentViewController.m in Sources */,
 				3E65114121614B5B00B8EE8F /* Artefact.m in Sources */,
 				3E78DD52216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m in Sources */,
 				3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */,
