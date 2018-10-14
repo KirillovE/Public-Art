@@ -22,6 +22,11 @@
     [self setArtefactsToControllers];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self presentWelcomeViewControllerIfNeeded];
+}
+
 /**
  Передаёт загруженный из интернета массив артефактов
  в контроллеры карты и коллекции
@@ -33,6 +38,17 @@
         weakSelf.mapVC.artArray = artArray;
         weakSelf.collectionVC.artArray = artArray;
     }];
+}
+
+- (void)presentWelcomeViewControllerIfNeeded {
+    BOOL welcomeShown = [[NSUserDefaults standardUserDefaults] boolForKey:@"welcomeShown"];
+    if (!welcomeShown) {
+        WelcomeViewController *welcomeVC = [WelcomeViewController alloc];
+        welcomeVC = [welcomeVC initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                 navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                               options:nil];
+        [self presentViewController:welcomeVC animated:YES completion:nil];
+    }
 }
 
 - (instancetype)init

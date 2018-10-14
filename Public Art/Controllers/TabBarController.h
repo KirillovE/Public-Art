@@ -10,6 +10,7 @@
 #import "MapViewController.h"
 #import "CollectionViewController.h"
 #import "APIManager.h"
+#import "WelcomeViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

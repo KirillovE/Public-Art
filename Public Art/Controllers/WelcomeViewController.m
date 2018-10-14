@@ -26,6 +26,8 @@ struct Content {
     [super viewDidLoad];
     
     self.view.backgroundColor = UIColor.cyanColor;
+    [self createContentArray];
+    
     self.dataSource = self;
     self.delegate = self;
     
@@ -35,7 +37,6 @@ struct Content {
                     animated:NO
                   completion:nil];
     
-    [self createContentArray];
     [self addNextButton];
 }
 
@@ -61,7 +62,7 @@ struct Content {
                                        100,
                                        50);
     [self.nextButton addTarget:self
-                        action:@selector(nextButtonDidTap:)
+                        action:@selector(nextButtonDidTap)
               forControlEvents:UIControlEventTouchUpInside];
     
     [self.nextButton setTitle:@"Next" forState:UIControlStateNormal];
@@ -72,21 +73,9 @@ struct Content {
     [self.view addSubview:self.nextButton];
 }
 
-- (void)nextButtonDidTap:(UIButton *)sender {
-    NSInteger index = ((ContentViewController *)[self.viewControllers firstObject]).index;
-    if (sender.tag) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstStart"];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        __weak typeof(self) weakSelf = self;
-        [self setViewControllers:@[[self viewControllerAtIndex:index + 1]]
-                       direction:UIPageViewControllerNavigationDirectionForward
-                        animated:YES
-                      completion:^(BOOL finished) {
-                          [weakSelf updateButtonWithIndex:index + 1];
-                      }
-         ];
-    }
+- (void)nextButtonDidTap {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"welcomeShown"];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
     
 - (ContentViewController *)viewControllerAtIndex:(NSInteger)index {
@@ -95,7 +84,7 @@ struct Content {
     }
     
     ContentViewController *contentViewController = [ContentViewController new];
-    contentViewController.title = content[index].titleText;
+    contentViewController.titleText = content[index].titleText;
     contentViewController.contentText = content[index].contentText;
     contentViewController.image =  [UIImage imageNamed: content[index].imageName];
     contentViewController.index = index;

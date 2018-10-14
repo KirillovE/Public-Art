@@ -84,7 +84,6 @@
 }
 
 - (void)setContentText:(NSString *)contentText {
-    self.contentText = contentText;
     self.contentLabel.text = contentText;
     CGFloat height = [self heightForText:contentText
                                 withFont:self.contentLabel.font
@@ -96,7 +95,6 @@
 }
 
 - (void)setImage:(UIImage *)image {
-    self.image = image;
     self.imageView.image = image;
 }
 
