@@ -27,26 +27,27 @@ struct Content {
     
     self.view.backgroundColor = UIColor.cyanColor;
     [self createContentArray];
+    [self addNextButton];
     
     self.dataSource = self;
     self.delegate = self;
-    
     ContentViewController *startViewController = [self viewControllerAtIndex:0];
     [self setViewControllers:@[startViewController]
                    direction:UIPageViewControllerNavigationDirectionForward
                     animated:NO
                   completion:nil];
-    
-    [self addNextButton];
 }
 
+/**
+ Создание массива информации для экрана привествия
+ */
 - (void)createContentArray {
-    NSArray *titles = @[@"Гавайи",
-                        @"Достопримечательности",
-                        @"Избранное"];
-    NSArray *contents = @[@"Добро пожаловать",
-                          @"Почти 200 артефактов",
-                          @"Сохраняйте артефакты в избранное"];
+    NSArray *titles = @[@"Hawaii",
+                        @"Artefacts",
+                        @"Favorites"];
+    NSArray *contents = @[@"Welcome! Here you'll see the beauty of Hawaii",
+                          @"Almost 200 artefacts, you should see them all",
+                          @"Add artefacts to favorites, lose nothing"];
     
     for (int i = 0; i < 3; ++i) {
         content[i].titleText = titles[i];
@@ -55,6 +56,9 @@ struct Content {
     }
 }
 
+/**
+ Добавление кнопки перехода на главный экран
+ */
 - (void)addNextButton {
     self.nextButton = [UIButton buttonWithType:UIButtonTypeSystem];
     self.nextButton.frame = CGRectMake(self.view.bounds.size.width - 100,
@@ -73,11 +77,35 @@ struct Content {
     [self.view addSubview:self.nextButton];
 }
 
+/**
+ Переход на главный экран приложения
+ */
 - (void)nextButtonDidTap {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"welcomeShown"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+/**
+ Обновления состояния кнопки
+
+ @param index Индекс текущего экрана
+ */
+- (void)updateButtonWithIndex:(NSInteger)index {
+    if (index < 2) {
+        self.nextButton.hidden = YES;
+        self.nextButton.tag = 0;
+    } else {
+        self.nextButton.hidden = NO;
+        self.nextButton.tag = 1;
+    }
+}
     
+/**
+ Создаёт контроллер по указанному индексу
+
+ @param index Порядковй номер контроллера
+ @return Контроллер содержимого для экрана приветствия
+ */
 - (ContentViewController *)viewControllerAtIndex:(NSInteger)index {
     if (index < 0 || index >= 3) {
         return nil;
@@ -90,16 +118,6 @@ struct Content {
     contentViewController.index = index;
     
     return contentViewController;
-}
-
-- (void)updateButtonWithIndex:(NSInteger)index {
-    if (index < 2) {
-        self.nextButton.hidden = YES;
-        self.nextButton.tag = 0;
-    } else {
-        self.nextButton.hidden = NO;
-        self.nextButton.tag = 1;
-    }
 }
 
 #pragma mark - Page view controller data source

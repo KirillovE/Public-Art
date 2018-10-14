@@ -40,6 +40,9 @@
     }];
 }
 
+/**
+ Отображает экран приветствия при необходимости
+ */
 - (void)presentWelcomeViewControllerIfNeeded {
     BOOL welcomeShown = [[NSUserDefaults standardUserDefaults] boolForKey:@"welcomeShown"];
     if (!welcomeShown) {
