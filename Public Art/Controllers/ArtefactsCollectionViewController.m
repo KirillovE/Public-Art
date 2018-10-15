@@ -147,7 +147,8 @@
         NSCompoundPredicate *compoundPredicate =  [NSCompoundPredicate
                                                    orPredicateWithSubpredicates:@[titlePredicate,
                                                                                   disciplinePredicate]];
-        self.resultsController.artArray = [self.artArray filteredArrayUsingPredicate:compoundPredicate];
+        self.resultsController.artArray = [self.artArray
+                                           filteredArrayUsingPredicate:compoundPredicate];
         
         [self.resultsController updateCollection];
     }
@@ -174,9 +175,11 @@
  Добавляет выделенные ячейки в избранное
  */
 - (void)addToFavorites {
-    for (NSIndexPath *indexPath in self.highlightedCells) {
+//    for (NSIndexPath *indexPath in self.highlightedCells) {
 //        [[CoreDataHelper shared] addToFavoritesArtefact:self.artArray[indexPath.row]];
-    }
+//    }
+    [self showSuccess];
+    [self selectCancelBarButtonPressed];
 }
 
 /**
@@ -225,6 +228,86 @@
     }
     [self.highlightedCells removeAllObjects];
     self.navigationItem.leftBarButtonItem = nil;
+}
+
+- (void)showSuccess {
+    UIView *blurView = [self addBlurEffect];
+    [self.view addSubview: blurView];
+    
+    UIImageView *imageView = [self createTransparentImageView];
+    [self.view addSubview:imageView];
+
+    UILabel *label = [self createTransparentLabel];
+    [self.view addSubview:label];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        imageView.alpha = 1;
+    }];
+    
+    [UIView animateWithDuration:0.5
+                          delay:0.2
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         label.alpha = 1;
+                     }
+                     completion:^(BOOL finished) {
+                         [self dismissSuccessView:imageView afterDelay:0.7];
+                         [self dismissSuccessView:label afterDelay:0.8];
+                         [self dismissSuccessView:blurView afterDelay:1.2];
+                     }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,
+                                 (int64_t)(3 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+                       [imageView removeFromSuperview];
+                       [label removeFromSuperview];
+                       [blurView removeFromSuperview];
+                   });
+}
+
+- (UIView *)addBlurEffect {
+    UIVisualEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    blurView.frame = self.view.bounds;
+    return blurView;
+}
+
+- (UIImageView *)createTransparentImageView {
+    UIImageView *imageView = [[UIImageView alloc]
+                              initWithImage:[UIImage imageNamed:@"success"]];
+    CGRect imageFrame = CGRectMake(self.view.bounds.size.width / 2 - 25,
+                                   self.view.bounds.size.height / 2 - 75,
+                                   50,
+                                   50);
+    imageView.frame = imageFrame;
+    imageView.alpha = 0;
+    return imageView;
+}
+
+- (UILabel *)createTransparentLabel {
+    CGSize labelSize = CGSizeMake(self.view.bounds.size.width - 20, 50);
+    UILabel *label = [[UILabel alloc]
+                      initWithFrame:CGRectMake(0, 0, labelSize.width, labelSize.height)];
+    label.center = CGPointMake(self.view.center.x, self.view.center.y + 50);
+    
+    label.text = @"Added to favorites!";
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:25 weight:UIFontWeightHeavy];
+    
+    label.alpha = 0;
+    return label;
+}
+
+- (void)dismissSuccessView:(UIView *)view
+                afterDelay:(NSTimeInterval)delay {
+    
+    [UIView animateWithDuration:0.3
+                          delay:delay
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         view.alpha = 0;
+                     }
+                     completion:nil];
 }
 
 @end
