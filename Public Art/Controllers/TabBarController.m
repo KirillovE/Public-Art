@@ -59,19 +59,27 @@
     self = [super init];
     if (self) {
         self.mapVC = [MapViewController new];
-        self.mapVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Map"
-                                                              image:[UIImage imageNamed:@"map"]
-                                                                tag:0];
+        self.mapVC.tabBarItem = [[UITabBarItem alloc]
+                                 initWithTitle:@"Map"
+                                 image:[UIImage imageNamed:@"map"]
+                                 tag:0];
         
         self.collectionVC = [ArtefactsCollectionViewController new];
         UINavigationController *navigationVC = [[UINavigationController alloc]
                                                 initWithRootViewController:self.collectionVC];
         navigationVC.navigationBar.prefersLargeTitles = YES;
-        self.collectionVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Collection"
-                                                                     image:[UIImage imageNamed:@"gallery"]
-                                                                       tag:1];
+        self.collectionVC.tabBarItem = [[UITabBarItem alloc]
+                                        initWithTitle:@"Collection"
+                                        image:[UIImage imageNamed:@"gallery"]
+                                        tag:1];
         
-        self.viewControllers = @[self.mapVC, navigationVC];
+        FavoritesCollectionViewController *favoritesVC = [FavoritesCollectionViewController new];
+        favoritesVC.tabBarItem = [[UITabBarItem alloc]
+                                  initWithTitle:@"Favorites"
+                                  image:[UIImage imageNamed:@"favorites"]
+                                  tag:2];
+        
+        self.viewControllers = @[self.mapVC, navigationVC, favoritesVC];
         self.selectedIndex = 0;
     }
     return self;

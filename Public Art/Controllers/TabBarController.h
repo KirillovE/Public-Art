@@ -11,6 +11,7 @@
 #import "ArtefactsCollectionViewController.h"
 #import "APIManager.h"
 #import "WelcomeViewController.h"
+#import "FavoritesCollectionViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
