@@ -230,8 +230,13 @@
     self.navigationItem.leftBarButtonItem = nil;
 }
 
+#pragma mark - Информирование об успешном добавлении в избранное
+
+/**
+ Информирует об успешном добавлении в избранное. С анимацией
+ */
 - (void)showSuccess {
-    UIView *blurView = [self addBlurEffect];
+    UIView *blurView = [self createBlurView];
     [self.view addSubview: blurView];
     
     UIImageView *imageView = [self createTransparentImageView];
@@ -265,13 +270,23 @@
                    });
 }
 
-- (UIView *)addBlurEffect {
+/**
+ Создаёт размытый вид размером с экран (с учётом NavigationBar)
+
+ @return Размытое представление
+ */
+- (UIView *)createBlurView {
     UIVisualEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:effect];
     blurView.frame = self.view.bounds;
     return blurView;
 }
 
+/**
+ Создаёт прозрачное представление изображения
+
+ @return Прозрачный Image View
+ */
 - (UIImageView *)createTransparentImageView {
     UIImageView *imageView = [[UIImageView alloc]
                               initWithImage:[UIImage imageNamed:@"success"]];
@@ -284,6 +299,11 @@
     return imageView;
 }
 
+/**
+ Создаёт прозрачное представление текста
+
+ @return Прозрачный Text Label
+ */
 - (UILabel *)createTransparentLabel {
     CGSize labelSize = CGSizeMake(self.view.bounds.size.width - 20, 50);
     UILabel *label = [[UILabel alloc]
@@ -298,6 +318,12 @@
     return label;
 }
 
+/**
+ Плавно скрывает переданное предстваление с эффектом прозрачности после задержки
+
+ @param view Представление для скрытыия
+ @param delay Задержка до начала скрытия
+ */
 - (void)dismissSuccessView:(UIView *)view
                 afterDelay:(NSTimeInterval)delay {
     
