@@ -1,5 +1,5 @@
 //
-//  CollectionViewController.h
+//  ArtefactsCollectionViewController.h
 //  Public Art
 //
 //  Created by Евгений Кириллов on 03/10/2018.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ArtefactsCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) NSArray<Artefact *> *artArray;
 @property (strong, nonatomic) UICollectionView *collectionView;

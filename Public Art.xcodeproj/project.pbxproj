@@ -23,11 +23,12 @@
 		3E78DD52216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD50216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m */; };
 		3E78DD55216F6DD200C7A099 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E78DD54216F6DD200C7A099 /* CoreDataHelper.m */; };
 		3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865192163FF1D00923E36 /* TabBarController.m */; };
-		3E9865262164905B00923E36 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865252164905B00923E36 /* CollectionViewController.m */; };
+		3E9865262164905B00923E36 /* ArtefactsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9865252164905B00923E36 /* ArtefactsCollectionViewController.m */; };
 		3E98652921649FF300923E36 /* LabelSizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E98652821649FF300923E36 /* LabelSizeHelper.m */; };
 		3EA1B26F216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3EA1B26D216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld */; };
 		3EDC9C542173E067002FBFA5 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C532173E067002FBFA5 /* ContentViewController.m */; };
 		3EDC9C572173E785002FBFA5 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C562173E785002FBFA5 /* WelcomeViewController.m */; };
+		3EDC9C5A2174A45A002FBFA5 /* FavoritesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EDC9C592174A45A002FBFA5 /* FavoritesCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +63,8 @@
 		3E78DD54216F6DD200C7A099 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		3E9865182163FF1D00923E36 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		3E9865192163FF1D00923E36 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
-		3E9865242164905B00923E36 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
-		3E9865252164905B00923E36 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		3E9865242164905B00923E36 /* ArtefactsCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtefactsCollectionViewController.h; sourceTree = "<group>"; };
+		3E9865252164905B00923E36 /* ArtefactsCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtefactsCollectionViewController.m; sourceTree = "<group>"; };
 		3E98652721649FF300923E36 /* LabelSizeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelSizeHelper.h; sourceTree = "<group>"; };
 		3E98652821649FF300923E36 /* LabelSizeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelSizeHelper.m; sourceTree = "<group>"; };
 		3EA1B26E216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavoriteArtefact.xcdatamodel; sourceTree = "<group>"; };
@@ -71,6 +72,8 @@
 		3EDC9C532173E067002FBFA5 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		3EDC9C552173E785002FBFA5 /* WelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		3EDC9C562173E785002FBFA5 /* WelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		3EDC9C582174A45A002FBFA5 /* FavoritesCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoritesCollectionViewController.h; sourceTree = "<group>"; };
+		3EDC9C592174A45A002FBFA5 /* FavoritesCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoritesCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,10 +148,12 @@
 				3E9865192163FF1D00923E36 /* TabBarController.m */,
 				3E65112C2161235B00B8EE8F /* MapViewController.h */,
 				3E65112D2161235B00B8EE8F /* MapViewController.m */,
-				3E9865242164905B00923E36 /* CollectionViewController.h */,
-				3E9865252164905B00923E36 /* CollectionViewController.m */,
+				3E9865242164905B00923E36 /* ArtefactsCollectionViewController.h */,
+				3E9865252164905B00923E36 /* ArtefactsCollectionViewController.m */,
 				3E5C3B612166076E00FC33ED /* ResultsCollectionViewController.h */,
 				3E5C3B622166076E00FC33ED /* ResultsCollectionViewController.m */,
+				3EDC9C582174A45A002FBFA5 /* FavoritesCollectionViewController.h */,
+				3EDC9C592174A45A002FBFA5 /* FavoritesCollectionViewController.m */,
 				3E5C3B5E2164F63300FC33ED /* CollectionViewCell.h */,
 				3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */,
 				3E651145216212DE00B8EE8F /* DetailsViewController.h */,
@@ -257,6 +262,7 @@
 				3E6511392161235D00B8EE8F /* main.m in Sources */,
 				3EDC9C542173E067002FBFA5 /* ContentViewController.m in Sources */,
 				3E65114121614B5B00B8EE8F /* Artefact.m in Sources */,
+				3EDC9C5A2174A45A002FBFA5 /* FavoritesCollectionViewController.m in Sources */,
 				3EDC9C572173E785002FBFA5 /* WelcomeViewController.m in Sources */,
 				3E78DD52216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataProperties.m in Sources */,
 				3E98651A2163FF1D00923E36 /* TabBarController.m in Sources */,
@@ -270,7 +276,7 @@
 				3E65114A2162310A00B8EE8F /* ArtAnnotation.m in Sources */,
 				3EA1B26F216F66FC00C3D0A2 /* FavoriteArtefact.xcdatamodeld in Sources */,
 				3E78DD51216F6C8000C7A099 /* FavoriteArtefactMO+CoreDataClass.m in Sources */,
-				3E9865262164905B00923E36 /* CollectionViewController.m in Sources */,
+				3E9865262164905B00923E36 /* ArtefactsCollectionViewController.m in Sources */,
 				3E65114D2162354D00B8EE8F /* ArtMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

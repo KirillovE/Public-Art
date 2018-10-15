@@ -1,15 +1,15 @@
 //
-//  CollectionViewController.m
+//  ArtefactsCollectionViewController.m
 //  Public Art
 //
 //  Created by Евгений Кириллов on 03/10/2018.
 //  Copyright © 2018 Триада. All rights reserved.
 //
 
-#import "CollectionViewController.h"
+#import "ArtefactsCollectionViewController.h"
 #import "ResultsCollectionViewController.h"
 
-@interface CollectionViewController () <UISearchResultsUpdating>
+@interface ArtefactsCollectionViewController () <UISearchResultsUpdating>
 
 @property (strong, nonatomic) NSString *reuseID;
 @property (strong, nonatomic) UISearchController *searchController;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation CollectionViewController
+@implementation ArtefactsCollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -11,7 +11,7 @@
 @interface TabBarController ()
 
 @property (strong, nonatomic) MapViewController *mapVC;
-@property (strong, nonatomic) CollectionViewController *collectionVC;
+@property (strong, nonatomic) ArtefactsCollectionViewController *collectionVC;
 
 @end
 
@@ -63,7 +63,7 @@
                                                               image:[UIImage imageNamed:@"map"]
                                                                 tag:0];
         
-        self.collectionVC = [CollectionViewController new];
+        self.collectionVC = [ArtefactsCollectionViewController new];
         UINavigationController *navigationVC = [[UINavigationController alloc]
                                                 initWithRootViewController:self.collectionVC];
         navigationVC.navigationBar.prefersLargeTitles = YES;

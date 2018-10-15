@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MapViewController.h"
-#import "CollectionViewController.h"
+#import "ArtefactsCollectionViewController.h"
 #import "APIManager.h"
 #import "WelcomeViewController.h"
 

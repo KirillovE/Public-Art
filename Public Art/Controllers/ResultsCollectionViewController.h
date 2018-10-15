@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CollectionViewController.h"
+#import "ArtefactsCollectionViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ResultsCollectionViewController : CollectionViewController
+@interface ResultsCollectionViewController : ArtefactsCollectionViewController
 
 - (void)updateCollection;
 
