@@ -48,10 +48,12 @@
  Настройка кнопки выделения ячеек
  */
 - (void)setSelectCancelButton {
-    self.selectCancelBarButton = [[UIBarButtonItem alloc] initWithTitle:@"select"
-                                                                  style:UIBarButtonItemStylePlain
-                                                                 target:self
-                                                                 action:@selector(selectCancelBarButtonPressed)];
+    self.selectCancelBarButton = [[UIBarButtonItem alloc]
+                                  initWithImage:[UIImage imageNamed:@"select"]
+                                  style:UIBarButtonItemStylePlain
+                                  target:self
+                                  action:@selector(selectCancelBarButtonPressed)];
+    
     self.navigationItem.rightBarButtonItem = self.selectCancelBarButton;
 }
 
@@ -157,11 +159,11 @@
  */
 - (void)selectCancelBarButtonPressed {
     if (self.selectionModeActive) {
-        self.selectCancelBarButton.title = @"select";
+//        self.selectCancelBarButton.image = [UIImage imageNamed:@"select"];
         self.selectionModeActive = NO;
         [self clearSelection];
     } else {
-        self.selectCancelBarButton.title = @"cancel";
+        self.selectCancelBarButton.image = [UIImage imageNamed:@"cancel"];
         self.selectionModeActive = YES;
         [self setFavoritesButton];
     }
