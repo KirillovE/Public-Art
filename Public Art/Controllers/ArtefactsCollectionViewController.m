@@ -174,7 +174,9 @@
  Добавляет выделенные ячейки в избранное
  */
 - (void)addToFavorites {
-    
+    for (NSIndexPath *indexPath in self.highlightedCells) {
+//        [[CoreDataHelper shared] addToFavoritesArtefact:self.artArray[indexPath.row]];
+    }
 }
 
 /**

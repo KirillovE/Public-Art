@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CollectionViewCell.h"
 #import "DetailsViewController.h"
+#import "CoreDataHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

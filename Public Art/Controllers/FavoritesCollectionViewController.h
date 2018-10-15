@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ArtefactsCollectionViewController.h"
+#import "CoreDataHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
