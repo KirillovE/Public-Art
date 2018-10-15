@@ -61,10 +61,11 @@
  Настройка кнопки сохранения артефакта в избранное
  */
 - (void)setFavoritesButton {
-    self.favoritesBarButton = [[UIBarButtonItem alloc] initWithTitle:@"save"
-                                                               style:UIBarButtonItemStylePlain
-                                                              target:self
-                                                              action:@selector(addToFavorites)];
+    self.favoritesBarButton = [[UIBarButtonItem alloc]
+                               initWithImage:[UIImage imageNamed:@"add favorites"]
+                               style:UIBarButtonItemStylePlain
+                               target:self
+                               action:@selector(addToFavorites)];
     self.navigationItem.leftBarButtonItem = self.favoritesBarButton;
     self.navigationItem.leftBarButtonItem.enabled = NO;
 }
@@ -159,7 +160,7 @@
  */
 - (void)selectCancelBarButtonPressed {
     if (self.selectionModeActive) {
-//        self.selectCancelBarButton.image = [UIImage imageNamed:@"select"];
+        self.selectCancelBarButton.image = [UIImage imageNamed:@"select"];
         self.selectionModeActive = NO;
         [self clearSelection];
     } else {
