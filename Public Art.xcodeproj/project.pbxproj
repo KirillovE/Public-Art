@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3E153F1D217CCCA000D72A58 /* SuccessAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E153F1C217CCC9F00D72A58 /* SuccessAnimationView.m */; };
+		3E153F24217D020600D72A58 /* NSString+Localize.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E153F23217D020600D72A58 /* NSString+Localize.m */; };
+		3E153F28217D04B600D72A58 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E153F2A217D04B600D72A58 /* localizable.strings */; };
 		3E5C3B602164F63300FC33ED /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */; };
 		3E5C3B632166076E00FC33ED /* ResultsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C3B622166076E00FC33ED /* ResultsCollectionViewController.m */; };
 		3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65112A2161235B00B8EE8F /* AppDelegate.m */; };
@@ -35,6 +37,11 @@
 /* Begin PBXFileReference section */
 		3E153F1B217CCC9F00D72A58 /* SuccessAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuccessAnimationView.h; sourceTree = "<group>"; };
 		3E153F1C217CCC9F00D72A58 /* SuccessAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuccessAnimationView.m; sourceTree = "<group>"; };
+		3E153F22217D020600D72A58 /* NSString+Localize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Localize.h"; sourceTree = "<group>"; };
+		3E153F23217D020600D72A58 /* NSString+Localize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Localize.m"; sourceTree = "<group>"; };
+		3E153F25217D045E00D72A58 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3E153F29217D04B600D72A58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localizable.strings; sourceTree = "<group>"; };
+		3E153F2B217D04B900D72A58 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/localizable.strings; sourceTree = "<group>"; };
 		3E5C3B5E2164F63300FC33ED /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		3E5C3B612166076E00FC33ED /* ResultsCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsCollectionViewController.h; sourceTree = "<group>"; };
@@ -93,6 +100,8 @@
 		3E153F1E217CCD4800D72A58 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3E5C3B5E2164F63300FC33ED /* CollectionViewCell.h */,
+				3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */,
 				3E153F1B217CCC9F00D72A58 /* SuccessAnimationView.h */,
 				3E153F1C217CCC9F00D72A58 /* SuccessAnimationView.m */,
 			);
@@ -127,6 +136,7 @@
 				3E6511342161235D00B8EE8F /* LaunchScreen.storyboard */,
 				3E6511372161235D00B8EE8F /* Info.plist */,
 				3E6511382161235D00B8EE8F /* main.m */,
+				3E153F2A217D04B600D72A58 /* localizable.strings */,
 			);
 			path = "Public Art";
 			sourceTree = "<group>";
@@ -146,6 +156,8 @@
 				3E6511492162310A00B8EE8F /* ArtAnnotation.m */,
 				3E98652721649FF300923E36 /* LabelSizeHelper.h */,
 				3E98652821649FF300923E36 /* LabelSizeHelper.m */,
+				3E153F22217D020600D72A58 /* NSString+Localize.h */,
+				3E153F23217D020600D72A58 /* NSString+Localize.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,8 +179,6 @@
 				3E5C3B622166076E00FC33ED /* ResultsCollectionViewController.m */,
 				3EDC9C582174A45A002FBFA5 /* FavoritesCollectionViewController.h */,
 				3EDC9C592174A45A002FBFA5 /* FavoritesCollectionViewController.m */,
-				3E5C3B5E2164F63300FC33ED /* CollectionViewCell.h */,
-				3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */,
 				3E651145216212DE00B8EE8F /* DetailsViewController.h */,
 				3E651146216212DE00B8EE8F /* DetailsViewController.m */,
 			);
@@ -243,6 +253,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 3E65111D2161235B00B8EE8F;
 			productRefGroup = 3E6511272161235B00B8EE8F /* Products */;
@@ -259,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E153F28217D04B600D72A58 /* localizable.strings in Resources */,
 				3E6511362161235D00B8EE8F /* LaunchScreen.storyboard in Resources */,
 				3E6511332161235D00B8EE8F /* Assets.xcassets in Resources */,
 			);
@@ -275,6 +287,7 @@
 				3E6511392161235D00B8EE8F /* main.m in Sources */,
 				3E153F1D217CCCA000D72A58 /* SuccessAnimationView.m in Sources */,
 				3EDC9C542173E067002FBFA5 /* ContentViewController.m in Sources */,
+				3E153F24217D020600D72A58 /* NSString+Localize.m in Sources */,
 				3E65114121614B5B00B8EE8F /* Artefact.m in Sources */,
 				3EDC9C5A2174A45A002FBFA5 /* FavoritesCollectionViewController.m in Sources */,
 				3EDC9C572173E785002FBFA5 /* WelcomeViewController.m in Sources */,
@@ -298,10 +311,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3E153F2A217D04B600D72A58 /* localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3E153F29217D04B600D72A58 /* en */,
+				3E153F2B217D04B900D72A58 /* ru */,
+			);
+			name = localizable.strings;
+			sourceTree = "<group>";
+		};
 		3E6511342161235D00B8EE8F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3E6511352161235D00B8EE8F /* Base */,
+				3E153F25217D045E00D72A58 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -313,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -372,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
