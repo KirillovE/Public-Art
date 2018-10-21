@@ -7,6 +7,7 @@
 //
 
 #import "WelcomeViewController.h"
+#import "NSString+Localize.h"
 
 @interface WelcomeViewController ()
 
@@ -42,12 +43,12 @@ struct Content {
  Создание массива информации для экрана привествия
  */
 - (void)createContentArray {
-    NSArray *titles = @[@"Hawaii",
-                        @"Artefacts",
-                        @"Favorites"];
-    NSArray *contents = @[@"Welcome! Here you'll see the beauty of Hawaii",
-                          @"Almost 200 artefacts, you should see them all",
-                          @"Add artefacts to favorites, lose nothing"];
+    NSArray *titles = @[[@"welcomeTitlesFirst" localize],
+                        [@"welcomeTitlesSecond" localize],
+                        [@"welcomeTitlesThird" localize]];
+    NSArray *contents = @[[@"welcomeContentsFirst" localize],
+                          [@"welcomeContentsSecond" localize],
+                          [@"welcomeContentsThird" localize]];
     
     for (int i = 0; i < 3; ++i) {
         content[i].titleText = titles[i];
@@ -69,7 +70,8 @@ struct Content {
                         action:@selector(nextButtonDidTap)
               forControlEvents:UIControlEventTouchUpInside];
     
-    [self.nextButton setTitle:@"Next" forState:UIControlStateNormal];
+    [self.nextButton setTitle:[@"welcomeNextButton" localize]
+                     forState:UIControlStateNormal];
     [self.nextButton setTintColor:[UIColor blackColor]];
     self.nextButton.hidden = YES;
     

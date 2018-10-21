@@ -8,6 +8,7 @@
 
 #import "ArtefactsCollectionViewController.h"
 #import "ResultsCollectionViewController.h"
+#import "NSString+Localize.h"
 
 @interface ArtefactsCollectionViewController () <UISearchResultsUpdating>
 
@@ -39,7 +40,7 @@
  */
 - (void)setInitialValues {
     self.view.backgroundColor = UIColor.cyanColor;
-    self.title = @"Collection";
+    self.title = [@"collectionTitle" localize];
     self.selectionModeActive = NO;
     self.highlightedCells = [NSMutableSet set];
 }
@@ -77,7 +78,7 @@
     self.resultsController = [ResultsCollectionViewController new];
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsController];
     self.searchController.searchResultsUpdater = self;
-    self.searchController.searchBar.placeholder = @"Title or discipline...";
+    self.searchController.searchBar.placeholder = [@"collectionSearchPlaceholder" localize];
     self.navigationItem.searchController = self.searchController;
 }
 

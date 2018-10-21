@@ -7,6 +7,7 @@
 //
 
 #import "FavoritesCollectionViewController.h"
+#import "NSString+Localize.h"
 
 @interface FavoritesCollectionViewController ()
 
@@ -19,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Favorites";
+    self.title = [@"favoritesTitle" localize];
     self.reuseID = @"ReuseIdentifier";
     
     self.navigationItem.rightBarButtonItem = nil;

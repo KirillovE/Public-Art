@@ -7,6 +7,7 @@
 //
 
 #import "TabBarController.h"
+#import "NSString+Localize.h"
 
 @interface TabBarController ()
 
@@ -60,7 +61,8 @@
     if (self) {
         self.mapVC = [MapViewController new];
         self.mapVC.tabBarItem = [[UITabBarItem alloc]
-                                 initWithTitle:@"Map"
+                                 initWithTitle:NSLocalizedString(@"mapTab", "")
+//                                 initWithTitle:[@"mapTab" localize]
                                  image:[UIImage imageNamed:@"map"]
                                  tag:0];
         
@@ -69,7 +71,7 @@
                                                          initWithRootViewController:self.collectionVC];
         artefactsNavigationVC.navigationBar.prefersLargeTitles = YES;
         self.collectionVC.tabBarItem = [[UITabBarItem alloc]
-                                        initWithTitle:@"Collection"
+                                        initWithTitle:[@"collectionTab" localize]
                                         image:[UIImage imageNamed:@"gallery"]
                                         tag:1];
         
@@ -78,7 +80,7 @@
                                                          initWithRootViewController:favoritesVC];
         favoritesNavigationVC.navigationBar.prefersLargeTitles = YES;
         favoritesVC.tabBarItem = [[UITabBarItem alloc]
-                                  initWithTitle:@"Favorites"
+                                  initWithTitle:[@"favoritesTab" localize]
                                   image:[UIImage imageNamed:@"favorites"]
                                   tag:2];
         

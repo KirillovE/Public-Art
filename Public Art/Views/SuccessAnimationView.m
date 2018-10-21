@@ -7,6 +7,7 @@
 //
 
 #import "SuccessAnimationView.h"
+#import "NSString+Localize.h"
 
 @implementation SuccessAnimationView
 
@@ -88,7 +89,7 @@
                       initWithFrame:CGRectMake(0, 0, labelSize.width, labelSize.height)];
     label.center = CGPointMake(self.center.x, self.center.y + 50);
     
-    label.text = @"Added to favorites!";
+    label.text = [@"successAnimationMessage" localize];
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont systemFontOfSize:25 weight:UIFontWeightHeavy];
     
