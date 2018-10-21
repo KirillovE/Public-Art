@@ -17,7 +17,7 @@
 @property (strong, nonatomic) UIBarButtonItem *selectCancelBarButton;
 @property (strong, nonatomic) UIBarButtonItem *favoritesBarButton;
 @property (nonatomic) BOOL selectionModeActive;
-@property (strong, nonatomic) NSMutableArray<NSIndexPath *> *highlightedCells;
+@property (strong, nonatomic) NSMutableSet<NSIndexPath *> *highlightedCells;
 
 @end
 
@@ -41,7 +41,7 @@
     self.view.backgroundColor = UIColor.cyanColor;
     self.title = @"Collection";
     self.selectionModeActive = NO;
-    self.highlightedCells = [NSMutableArray array];
+    self.highlightedCells = [NSMutableSet set];
 }
 
 /**
