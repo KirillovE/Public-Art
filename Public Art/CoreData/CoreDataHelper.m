@@ -43,15 +43,37 @@
 }
 
 /**
- Получает массив избранных артефактов
+ Получает массив избранных управляемых моделей
  
- @return Массив избранных артефактов
+ @return Массив избранных управляемых моделей
  */
-
-//FIXME: Был указан неправильный тип. Метод возвращает NSManagedObject объект, а не обычный
-- (NSArray<FavoriteArtefactMO *> *)getFavorites {
+- (NSArray<FavoriteArtefactMO *> *)getFavoritesMO {
     NSFetchRequest *request = [FavoriteArtefactMO fetchRequest];
     return [self.context executeFetchRequest:request error:nil];
+}
+
+/**
+ Получает массив избраных артефактов
+
+ @return Массив избранных артефактов
+ */
+- (NSArray<Artefact *> *)getFavorites {
+    NSArray<FavoriteArtefactMO *> *favoritesMO = [self getFavoritesMO];
+    NSMutableArray<Artefact *> *favorites = [NSMutableArray array];
+    
+    for (FavoriteArtefactMO *artefactMO in favoritesMO) {
+        Artefact *art = [[Artefact alloc] init];
+        art.title = artefactMO.title;
+        art.discipline = artefactMO.discpline;
+        art.creator = artefactMO.creator;
+        art.date = [NSNumber numberWithInt:1];
+        art.location = artefactMO.location;
+        art.artDescription = artefactMO.artDescription;
+        
+        [favorites addObject:art];
+    }
+    
+    return favorites;
 }
 
 /**
