@@ -1,5 +1,5 @@
 /* 
-  localizable.strings
+  Localizable.strings
   Public Art
 
   Created by Евгений Кириллов on 21/10/2018.
@@ -8,31 +8,31 @@
 
 // WelcomeViewController
 
-"WelcomeTitlesFirst" = "Hawaii"
-"WelcomeTitlesSecond" = "Artefacts"
-"WelcomeTitlesThird" = "Favorites"
+"welcomeTitlesFirst" = "Hawaii";
+"welcomeTitlesSecond" = "Artefacts";
+"welcomeTitlesThird" = "Favorites";
 
-"welcomeContentsFirst" = "Welcome! Here you'll see the beauty of Hawaii"
-"welcomeContentsSecond" = "Almost 200 artefacts, you should see them all"
-"welcomeContentsThird" = "Add artefacts to favorites, lose nothing"
+"welcomeContentsFirst" = "Welcome! Here you'll see the beauty of Hawaii";
+"welcomeContentsSecond" = "Almost 200 artefacts, you should see them all";
+"welcomeContentsThird" = "Add artefacts to favorites, lose nothing";
 
-"welcomeNextButton" = "Next"
+"welcomeNextButton" = "Next";
 
 // TabBarController
 
-"mapTab" = "Map"
-"collectionTab" = "Collection"
-"favoritesTab" = "Favorites"
+"mapTab" = "Map";
+"collectionTab" = "Collection";
+"favoritesTab" = "Favorites";
 
 // ArtefactsCollectionViewController
 
-"collectionTitle" = "Collection"
-"collectionSearchPlaceholder" = "Title or discipline..."
+"collectionTitle" = "Collection";
+"collectionSearchPlaceholder" = "Title or discipline...";
 
 // FavoritesCollectionViewController
 
-"favoritesTitle" = "Favorites"
+"favoritesTitle" = "Favorites";
 
 // SuccessAnimationView
 
-"successAnimationMessage" = "Added to favorites!"
+"successAnimationMessage" = "Added to favorites!";
