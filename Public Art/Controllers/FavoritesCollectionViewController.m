@@ -42,17 +42,8 @@
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.reuseID
                                                                          forIndexPath:indexPath];
     
-    //FIXME: По идеи нужен метод для конвертации NSManagedObject объекта в обычный и наоборот
-    FavoriteArtefactMO *favorite = self.favoritesArray[indexPath.row];
-    Artefact *art = [[Artefact alloc] init];
-    art.title = favorite.title;
-    art.discipline = favorite.discpline;
-    art.creator = favorite.creator;
-    art.date = [NSNumber numberWithInt:1];
-    art.location = favorite.location;
-    art.artDescription = favorite.artDescription;
-    
-    [cell configureCellWithArtefact:art];
+    Artefact *favorite = self.artArray[indexPath.row];
+    [cell configureCellWithArtefact:favorite];
     
     return cell;
 }
