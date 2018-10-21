@@ -11,7 +11,9 @@
 @interface CoreDataHelper ()
 
 @property (strong, nonatomic) NSPersistentContainer *persistentContainer;
-@property (strong, nonatomic) NSManagedObjectContext *context;
+
+//FIXME: Не нужное свойство
+//@property (strong, nonatomic) NSManagedObjectContext *context;
 
 @end
 
@@ -19,14 +21,16 @@
 
 #pragma mark - Методы для взаимодействия с базой данных из вне
 
+//FIXME: Также в файле БД дал одинаковые название для имени класса и сущности. Также в конфигурациях изменил название класса
+
 /**
  Добавляет артефакт в избранное
-
+ 
  @param artefact Артефакт для добавления в избранное
  */
 - (void)addToFavoritesArtefact:(Artefact *)artefact {
     FavoriteArtefactMO *favoriteArtefact = [NSEntityDescription
-                                            insertNewObjectForEntityForName:@"FavoriteArtefact"
+                                            insertNewObjectForEntityForName:@"FavoriteArtefactMO"
                                             inManagedObjectContext:self.context];
     favoriteArtefact.title = artefact.title;
     favoriteArtefact.discpline = artefact.discipline;
@@ -40,17 +44,19 @@
 
 /**
  Получает массив избранных артефактов
-
+ 
  @return Массив избранных артефактов
  */
-- (NSArray<Artefact *> *)getFavorites {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteArtefact"];
+
+//FIXME: Был указан неправильный тип. Метод возвращает NSManagedObject объект, а не обычный
+- (NSArray<FavoriteArtefactMO *> *)getFavorites {
+    NSFetchRequest *request = [FavoriteArtefactMO fetchRequest];
     return [self.context executeFetchRequest:request error:nil];
 }
 
 /**
  Удаляет переданный артефакт из избранных
-
+ 
  @param artefact Артефакт для удаления из избранных
  */
 - (void)deleteFromFavoritesArtefact:(Artefact *)artefact {
@@ -63,7 +69,7 @@
 
 /**
  Проверяет наличие артефакта среди избранных
-
+ 
  @param artefact Артефакт для проверки
  @return Результат проверки на наличие среди избранных
  */
@@ -88,7 +94,8 @@
  Настраивает работу с CoreData
  */
 - (void)setup {
-    self.persistentContainer = [[NSPersistentContainer alloc] initWithName:@"Core"];
+    //FIXME: Было указано неправильно название базы
+    self.persistentContainer = [[NSPersistentContainer alloc] initWithName:@"FavoriteArtefact"];
     [self.persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *description, NSError * error) {
         if (error != nil) {
             NSLog(@"Failed to load Core Data stack: %@", error);
@@ -124,7 +131,7 @@
  @return Соответствующий артефакт из базы данных
  */
 - (FavoriteArtefactMO *)favoriteArtefactFromArtefact:(Artefact *)artefact {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteArtefact"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteArtefactMO"];
     
     request.predicate = [NSPredicate predicateWithFormat:@"title == %@ AND discipline == %@ AND creator == %@ AND date == %f AND location == %@ AND artDescription == %@",
                          artefact.title,

@@ -12,7 +12,7 @@
 @implementation FavoriteArtefactMO (CoreDataProperties)
 
 + (NSFetchRequest<FavoriteArtefactMO *> *)fetchRequest {
-	return [NSFetchRequest fetchRequestWithEntityName:@"FavoriteArtefact"];
+	return [NSFetchRequest fetchRequestWithEntityName:@"FavoriteArtefactMO"];
 }
 
 @dynamic artDescription;

@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shared;
 
 - (void)addToFavoritesArtefact:(Artefact *)artefact;
-- (NSArray<Artefact *> *)getFavorites;
+- (NSArray<FavoriteArtefactMO *> *)getFavorites;
 - (void)deleteFromFavoritesArtefact:(Artefact *)artefact;
 - (BOOL)isFavoriteArtefact:(Artefact *)artefact;
 
