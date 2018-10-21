@@ -119,6 +119,11 @@
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.reuseID
                                                                          forIndexPath:indexPath];
     [cell configureCellWithArtefact:self.artArray[indexPath.row]];
+    if ([self.highlightedCells containsObject:indexPath]) {
+        [self highlightCell:cell];
+    } else {
+        [self unhighlightCell:cell];
+    }
 
     return cell;
 }
@@ -203,11 +208,10 @@
     UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
     
     if ([self.highlightedCells containsObject:indexPath]) {
-        cell.layer.borderWidth = 0;
+        [self unhighlightCell:cell];
         [self.highlightedCells removeObject:indexPath];
     } else {
-        cell.layer.borderColor = UIColor.blueColor.CGColor;
-        cell.layer.borderWidth = 5;
+        [self highlightCell:cell];
         [self.highlightedCells addObject:indexPath];
     }
     
@@ -219,12 +223,31 @@
 }
 
 /**
+ Выделяет переданную ячейку
+
+ @param cell Ячейка для выделения
+ */
+- (void)highlightCell:(UICollectionViewCell *)cell {
+    cell.layer.borderColor = UIColor.blueColor.CGColor;
+    cell.layer.borderWidth = 5;
+}
+
+/**
+ Снимает выделение с ячейки
+
+ @param cell Ячейка для снятия выделения
+ */
+- (void)unhighlightCell:(UICollectionViewCell *)cell {
+    cell.layer.borderWidth = 0;
+}
+
+/**
  Убирает выделение ячеек
  */
 - (void)clearSelection {
     for (NSIndexPath *indexPath in self.highlightedCells) {
         UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
-        cell.layer.borderWidth = 0;
+        [self unhighlightCell:cell];
     }
     [self.highlightedCells removeAllObjects];
     self.navigationItem.leftBarButtonItem = nil;
