@@ -11,7 +11,6 @@
 @interface FavoritesCollectionViewController ()
 
 @property (strong, nonatomic) NSString *reuseID;
-@property (strong, nonatomic) NSArray<FavoriteArtefactMO *> *favoritesArray;
 
 @end
 
@@ -27,14 +26,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.favoritesArray = [[CoreDataHelper shared] getFavorites];
+    self.artArray = [[CoreDataHelper shared] getFavorites];
     [self.collectionView reloadData];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section {
     
-    return self.favoritesArray.count;
+    return self.artArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
