@@ -65,21 +65,24 @@
                                  tag:0];
         
         self.collectionVC = [ArtefactsCollectionViewController new];
-        UINavigationController *navigationVC = [[UINavigationController alloc]
-                                                initWithRootViewController:self.collectionVC];
-        navigationVC.navigationBar.prefersLargeTitles = YES;
+        UINavigationController *artefactsNavigationVC = [[UINavigationController alloc]
+                                                         initWithRootViewController:self.collectionVC];
+        artefactsNavigationVC.navigationBar.prefersLargeTitles = YES;
         self.collectionVC.tabBarItem = [[UITabBarItem alloc]
                                         initWithTitle:@"Collection"
                                         image:[UIImage imageNamed:@"gallery"]
                                         tag:1];
         
         FavoritesCollectionViewController *favoritesVC = [FavoritesCollectionViewController new];
+        UINavigationController *favoritesNavigationVC = [[UINavigationController alloc]
+                                                         initWithRootViewController:favoritesVC];
+        favoritesNavigationVC.navigationBar.prefersLargeTitles = YES;
         favoritesVC.tabBarItem = [[UITabBarItem alloc]
                                   initWithTitle:@"Favorites"
                                   image:[UIImage imageNamed:@"favorites"]
                                   tag:2];
         
-        self.viewControllers = @[self.mapVC, navigationVC, favoritesVC];
+        self.viewControllers = @[self.mapVC, artefactsNavigationVC, favoritesNavigationVC];
         self.selectedIndex = 0;
     }
     return self;
