@@ -42,6 +42,7 @@
 		3E153F25217D045E00D72A58 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3E153F29217D04B600D72A58 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3E153F2B217D04B900D72A58 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E301612217D15910075F92B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3E5C3B5E2164F63300FC33ED /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		3E5C3B612166076E00FC33ED /* ResultsCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsCollectionViewController.h; sourceTree = "<group>"; };
@@ -325,6 +326,7 @@
 			children = (
 				3E6511352161235D00B8EE8F /* Base */,
 				3E153F25217D045E00D72A58 /* ru */,
+				3E301612217D15910075F92B /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

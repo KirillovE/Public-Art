@@ -61,8 +61,7 @@
     if (self) {
         self.mapVC = [MapViewController new];
         self.mapVC.tabBarItem = [[UITabBarItem alloc]
-                                 initWithTitle:NSLocalizedString(@"mapTab", "")
-//                                 initWithTitle:[@"mapTab" localize]
+                                 initWithTitle:[@"mapTab" localize]
                                  image:[UIImage imageNamed:@"map"]
                                  tag:0];
         
