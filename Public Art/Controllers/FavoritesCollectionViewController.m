@@ -21,6 +21,9 @@
     
     self.title = @"Favorites";
     self.reuseID = @"ReuseIdentifier";
+    
+    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.leftBarButtonItem = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
