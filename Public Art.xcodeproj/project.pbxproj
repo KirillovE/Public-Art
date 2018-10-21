@@ -47,6 +47,9 @@
 		3E30161F217D1DF70075F92B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E301621217D1E040075F92B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E301622217D1E060075F92B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3E301623217D1F660075F92B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3E301624217D1F660075F92B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3E301625217D1F660075F92B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E5C3B5E2164F63300FC33ED /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		3E5C3B612166076E00FC33ED /* ResultsCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsCollectionViewController.h; sourceTree = "<group>"; };
@@ -260,6 +263,7 @@
 				en,
 				Base,
 				ru,
+				fr,
 			);
 			mainGroup = 3E65111D2161235B00B8EE8F;
 			productRefGroup = 3E6511272161235B00B8EE8F /* Products */;
@@ -323,6 +327,7 @@
 			children = (
 				3E153F29217D04B600D72A58 /* en */,
 				3E301617217D19490075F92B /* ru */,
+				3E301624217D1F660075F92B /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 				3E30161F217D1DF70075F92B /* Base */,
 				3E301621217D1E040075F92B /* en */,
 				3E301622217D1E060075F92B /* ru */,
+				3E301625217D1F660075F92B /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				3E6511352161235D00B8EE8F /* Base */,
 				3E301612217D15910075F92B /* en */,
 				3E301616217D19400075F92B /* ru */,
+				3E301623217D1F660075F92B /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

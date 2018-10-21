@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  Public Art
+
+  Created by Евгений Кириллов on 21/10/2018.
+  Copyright © 2018 Триада. All rights reserved.
+*/
+
+// WelcomeViewController
+
+"welcomeTitlesFirst" = "Hawaii";
+"welcomeTitlesSecond" = "Artefacts";
+"welcomeTitlesThird" = "Favorites";
+
+"welcomeContentsFirst" = "Bienvenue! Here you'll see the beauty of Hawaii";
+"welcomeContentsSecond" = "Almost 200 artefacts, you should see them all";
+"welcomeContentsThird" = "Add artefacts to favorites, lose nothing";
+
+"welcomeNextButton" = "Next";
+
+// TabBarController
+
+"mapTab" = "Carte";
+"collectionTab" = "Collection";
+"favoritesTab" = "Favorites";
+
+// ArtefactsCollectionViewController
+
+"collectionTitle" = "Collection";
+"collectionSearchPlaceholder" = "Title or discipline...";
+
+// FavoritesCollectionViewController
+
+"favoritesTitle" = "Favorites";
+
+// SuccessAnimationView
+
+"successAnimationMessage" = "Added to favorites!";
