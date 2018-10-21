@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E153F1D217CCCA000D72A58 /* SuccessAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E153F1C217CCC9F00D72A58 /* SuccessAnimationView.m */; };
 		3E5C3B602164F63300FC33ED /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */; };
 		3E5C3B632166076E00FC33ED /* ResultsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C3B622166076E00FC33ED /* ResultsCollectionViewController.m */; };
 		3E65112B2161235B00B8EE8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65112A2161235B00B8EE8F /* AppDelegate.m */; };
@@ -32,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E153F1B217CCC9F00D72A58 /* SuccessAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuccessAnimationView.h; sourceTree = "<group>"; };
+		3E153F1C217CCC9F00D72A58 /* SuccessAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuccessAnimationView.m; sourceTree = "<group>"; };
 		3E5C3B5E2164F63300FC33ED /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		3E5C3B5F2164F63300FC33ED /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		3E5C3B612166076E00FC33ED /* ResultsCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultsCollectionViewController.h; sourceTree = "<group>"; };
@@ -87,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E153F1E217CCD4800D72A58 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E153F1B217CCC9F00D72A58 /* SuccessAnimationView.h */,
+				3E153F1C217CCC9F00D72A58 /* SuccessAnimationView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3E65111D2161235B00B8EE8F = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				3E6511512162451F00B8EE8F /* Controllers */,
+				3E153F1E217CCD4800D72A58 /* Views */,
 				3E6511502162451300B8EE8F /* Models */,
 				3EA1B287216F6BA900C3D0A2 /* CoreData */,
 				3E6511322161235D00B8EE8F /* Assets.xcassets */,
@@ -260,6 +273,7 @@
 			files = (
 				3E65112E2161235B00B8EE8F /* MapViewController.m in Sources */,
 				3E6511392161235D00B8EE8F /* main.m in Sources */,
+				3E153F1D217CCCA000D72A58 /* SuccessAnimationView.m in Sources */,
 				3EDC9C542173E067002FBFA5 /* ContentViewController.m in Sources */,
 				3E65114121614B5B00B8EE8F /* Artefact.m in Sources */,
 				3EDC9C5A2174A45A002FBFA5 /* FavoritesCollectionViewController.m in Sources */,

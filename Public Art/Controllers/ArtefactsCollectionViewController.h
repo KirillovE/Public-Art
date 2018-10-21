@@ -10,6 +10,7 @@
 #import "CollectionViewCell.h"
 #import "DetailsViewController.h"
 #import "CoreDataHelper.h"
+#import "SuccessAnimationView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
