@@ -12,16 +12,11 @@
 
 @property (strong, nonatomic) NSPersistentContainer *persistentContainer;
 
-//FIXME: Не нужное свойство
-//@property (strong, nonatomic) NSManagedObjectContext *context;
-
 @end
 
 @implementation CoreDataHelper
 
 #pragma mark - Методы для взаимодействия с базой данных из вне
-
-//FIXME: Также в файле БД дал одинаковые название для имени класса и сущности. Также в конфигурациях изменил название класса
 
 /**
  Добавляет артефакт в избранное
@@ -116,7 +111,6 @@
  Настраивает работу с CoreData
  */
 - (void)setup {
-    //FIXME: Было указано неправильно название базы
     self.persistentContainer = [[NSPersistentContainer alloc] initWithName:@"FavoriteArtefact"];
     [self.persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *description, NSError * error) {
         if (error != nil) {
