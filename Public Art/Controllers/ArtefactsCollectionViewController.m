@@ -7,18 +7,17 @@
 //
 
 #import "ArtefactsCollectionViewController.h"
-#import "ResultsCollectionViewController.h"
 #import "NSString+Localize.h"
 
 @interface ArtefactsCollectionViewController () <UISearchResultsUpdating>
 
 @property (strong, nonatomic) NSString *reuseID;
 @property (strong, nonatomic) UISearchController *searchController;
-@property (strong, nonatomic) ResultsCollectionViewController *resultsController;
 @property (strong, nonatomic) UIBarButtonItem *selectCancelBarButton;
 @property (strong, nonatomic) UIBarButtonItem *favoritesBarButton;
 @property (nonatomic) BOOL selectionModeActive;
 @property (strong, nonatomic) NSMutableSet<NSIndexPath *> *highlightedCells;
+@property (strong, nonatomic) NSMutableArray<Artefact *> *searchedArtArray;
 
 @end
 
@@ -75,10 +74,10 @@
  Настройка поисковой строки
  */
 - (void)setSearchController {
-    self.resultsController = [ResultsCollectionViewController new];
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.resultsController];
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchController.searchResultsUpdater = self;
     self.searchController.searchBar.placeholder = [@"collectionSearchPlaceholder" localize];
+    self.searchController.dimsBackgroundDuringPresentation = NO;
     self.navigationItem.searchController = self.searchController;
 }
 
@@ -113,13 +112,25 @@
 #pragma mark - Collection View data source
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.artArray.count;
+    if (self.searchController.isActive) {
+        return self.searchedArtArray.count;
+    } else {
+        return self.artArray.count;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.reuseID
                                                                          forIndexPath:indexPath];
-    [cell configureCellWithArtefact:self.artArray[indexPath.row]];
+    
+    Artefact *art = [Artefact new];
+    if (self.searchController.isActive) {
+        art = self.searchedArtArray[indexPath.row];
+    } else {
+        art = self.artArray[indexPath.row];
+    }
+    
+    [cell configureCellWithArtefact:art];
     if ([self.highlightedCells containsObject:indexPath]) {
         [self highlightCell:cell];
     } else {
@@ -153,10 +164,11 @@
         NSCompoundPredicate *compoundPredicate =  [NSCompoundPredicate
                                                    orPredicateWithSubpredicates:@[titlePredicate,
                                                                                   disciplinePredicate]];
-        self.resultsController.artArray = [self.artArray
-                                           filteredArrayUsingPredicate:compoundPredicate];
+        self.searchedArtArray = [NSMutableArray
+                                 arrayWithArray:[self.artArray
+                                                 filteredArrayUsingPredicate:compoundPredicate]];
         
-        [self.resultsController updateCollection];
+        [self.collectionView reloadData];
     }
 }
 
